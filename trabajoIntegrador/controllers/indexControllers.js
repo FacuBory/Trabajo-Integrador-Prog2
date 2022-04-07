@@ -1,5 +1,5 @@
  var express = require('express');
- var router = express.router();
+ var router = express.Router();
  const data = require('../db/data');
  const indexController = {
      index: function(req,res){

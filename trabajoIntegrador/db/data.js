@@ -6,8 +6,8 @@ const data = {
     productos : [ {
         id : 1,
         nombre : "Cafetera Moulinex",
-        img : "",
-        
+        img : "https://macfixstore.com/wp-content/uploads/2021/11/iphone-13-pink-select-2021.png",
+
     },
     {
         id : 2,
