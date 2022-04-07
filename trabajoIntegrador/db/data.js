@@ -1,12 +1,51 @@
 const data = {
     usuario : {
-        nombre : "brian"
+        nombre : "Facundo",
+        apellido : "Bory"
     },
     productos : [ {
-        id : 34,
-        nombre : "camisas",
-        img : "https://http2.mlstatic.com/D_NQ_NP_2X_634834-MLA46724971388_072021-F.webp"
-    }],
+        id : 1,
+        nombre : "Cafetera Moulinex",
+        img : "",
+        
+    },
+    {
+        id : 2,
+        nombre : "Macbook Pro 2019",
+        img : ""
+    },
+    {
+        id : 3,
+        nombre : "Samsung Galaxy S10",
+        img : ""
+    },
+    {
+        id : 4,
+        nombre : "Samsung Samrt Tv",
+        img : ""
+    },
+    {
+        id : 5,
+        nombre : "Iphone 13 pro",
+        img : ""
+    },
+    {
+        id : 6,
+        nombre : "Lenovo Thinkpad",
+        img : ""
+    },
+    {
+        id : 7,
+        nombre : "Heladera Samsung",
+        img : ""
+    },
+    {
+        id : 8,
+        nombre : "Ipad Pro",
+        img : ""
+    },
+    
+],
     comentarios : [ , , , , , , , , , ]
 }
 
