@@ -13,6 +13,12 @@ profile: function(req, res, next) {
 userDeslogueado: function(req, res, next) {
   console.log(data.usuario)
   res.render('userDeslogueado',);
+},
+register: function(req, res, next) {
+  res.render('register',);
+},
+login: function(req, res, next) {
+  res.render('login',);
 }
 
 

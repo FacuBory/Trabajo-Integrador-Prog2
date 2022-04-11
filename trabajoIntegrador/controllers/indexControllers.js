@@ -3,7 +3,8 @@
  const data = require('../db/data');
  const indexController = {
      index: function(req,res){
-       return res.render('index',{listaProducto: data.productos})
+       return res.render('index',{listaProducto: data.productos,
+        usuarioLogueado: data.usuario})
      },
      
 
