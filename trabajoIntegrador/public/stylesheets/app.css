@@ -169,6 +169,7 @@ hr {
 }
 
 .products-title {
+  font-family: 'Fjalla One', sans-serif;
   font-size: 2.4em;
   font-weight: 400;
   color: var(--gray);
@@ -255,6 +256,14 @@ hr {
 .product-box:hover i {
   transform: rotate(360deg);
   box-shadow: 0 0 5px var(--green);
+}
+.nombrestyle {
+  font-family: 'Nanum Myeongjo', serif;
+  color: #4f4b4b;
+  
+}
+.descripcionstyle {
+  font-family: 'Nanum Myeongjo', serif;
 }
 
 /*====== Footer ======*/

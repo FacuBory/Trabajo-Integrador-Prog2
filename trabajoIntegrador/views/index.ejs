@@ -8,11 +8,16 @@
 	
 	<title> Mercado Liebre Argentina</title>
 			<!-- Font Awesome Stylesheet -->
+	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 	<!-- Bootstrap Grid Stylesheet -->
 	<link rel="stylesheet" href="./stylesheets/bootstrap-grid.min.css">
 	<!-- Own Stylesheet -->
-	<link rel="stylesheet" href="./stylesheets/app.css>
+	<link rel="stylesheet" href="./stylesheets/app.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&display=swap" rel="stylesheet">
+	
 </head>
 <body>
 	
@@ -31,7 +36,7 @@
 				<h2 class="products-title">Novedades</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<% for( let i = 0; i < 4; i++ ) { %>
+			<% for( let i = 0; i < 8; i++ ) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
 						<a href="">
@@ -39,8 +44,8 @@
 								<img src="<%= listaProducto[i].img %>" alt="cafetera moulinex">
 							</figure>
 							<article class="product-box_data">
-								<h2><%= listaProducto[i].nombre %> </h2>
-								<p> <%= listaProducto[i].descripción %></p>
+								<h2 class="nombrestyle"><%= listaProducto[i].nombre %> </h2>
+								<p class="descripcionstyle"> <%= listaProducto[i].descripción %></p>
 								<p>Comentarios: 12</p>
 							</article>
 						</a>
