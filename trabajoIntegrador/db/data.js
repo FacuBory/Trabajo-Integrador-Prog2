@@ -25,31 +25,31 @@ const data = {
     {
         id : 4,
         nombre : "Samsung Samrt Tv",
-        img : "https://images.samsung.com/is/image/samsung/p6pim/ar/un43t5300agczb/gallery/ar-fhd-t5300-un43t5300agczb-356627272?$720_576_PNG$",
+        img : "https://probuykenya.com/public/uploads/products/thumbnail/tLtFOTrTfgWIpMtZA53eQ0ejGf4fngvtIBfBZAFV.png",
         descripción : "Los Samsung Smart TV 2020 combinan nuevas tecnologías y diseño para proporcionar a los espectadores una experiencia innovadora. Por otra parte, gracias al Infinity Design ligeramente inclinado hacia atrás, los modelos insignia Q900 y Q950 ofrecen la mejor experiencia envolvente. " , 
     },
     {
         id : 5,
         nombre : "Iphone 13 pro",
-        img : "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-pro-family-hero?wid=940&hei=1112&fmt=png-alpha&.v=1644969385433",
+        img : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmKpuND1qldDltn_0EiCOXHCAIiNa3i2QkWw&usqp=CAU",
         descripción : "El Apple iPhone 13 Pro llega manteniendo el diseño de su predecesor. Con una pantalla OLED de 6.1 pulgadas con tasa de refresco variable de hasta 120Hz, el iPhone 13 Pro cuenta con el procesador A15 Bionic con opciones de 128GB, 256GB, 512GB, y 1TB. La cámara trasera es cuádruple, con tres lentes de 12MP que funcionan como wide, ultrawide y telefoto, más un sensor LiDAR para información de profundidad, con estabilización óptica de imagen, zoom, 3x y captura de video en formato ProRes. La cámara selfie es ultrawide de 12MP. El iPhone 13 Pro completa sus características con carga rápida por cable e inalámbrica, parlantes stereo, resistencia al polvo y agua, y corre iOS 15. " , 
     },
     {
         id : 6,
         nombre : "Lenovo Thinkpad",
-        img : "https://www.lenovo.com/medias/22wsp144sa2.png?context=bWFzdGVyfHJvb3R8MzE4NjQ2fGltYWdlL3BuZ3xoNDgvaDk2LzE0MTExNzA0NjEyODk0LnBuZ3xlZjc5YTg1NTNiM2Y1NWMyMzI0N2UyYWM0M2ViMWFkMGRiOTkwMmYzZGJjM2MxMjgxZGZlYWQzMTVkMjZkOTY1",
+        img : "https://alltechweb.com.ar/web/image/product.template/1093/image_256/NOTEBOOK%20LENOVO%20V15%20CORE%20I3-10110U%208GB%20SSD256%2082NB002EAR?unique=4e05f9d",
         descripción : "Procesadores Intel® Core™ 4ta generación que ofrecen el rendimiento para incrementar la productividad de su negocio. Los dispositivos se encienden en un instante y están siempre actualizados. Puedes hacer múltiples tareas rápidamente y pasar sin esfuerzo de una aplicación a otra, colaborar en forma inalámbrica en videoconferencias de alta calidad, todo con la comodidad de una batería de larga duración. Además, puedes protegerte del robo de identidad y asegurarte un acceso seguro a tu red con las funciones de seguridad integradas. De hecho, lo único más asombroso que una PC con procesador Interl Core es lo que los usuarios harán con ella." , 
     },
     {
         id : 7,
         nombre : "Heladera Samsung",
-        img : "https://samsungar.vtexassets.com/arquivos/ids/164847-800-auto?width=800&height=auto&aspect=true",
+        img : "https://www.nnet.com.uy/productos/imgs/refrigerador-enxuta-side-by-side-con-dispensador-y-display-76577-31.png",
         descripción : "Samsung Family Hub es la heladera inteligente con pantalla que permite chequear contenidos del interior, ver series, recetas y más." , 
     },
     {
         id : 8,
         nombre : "Ipad Pro 12.9'",
-        img : "https://cbafederal.net/wp-content/uploads/2021/09/Apple-iPad-Pro-129-inch-5th-gen-Space-Gray-frontimage.png",
+        img : "https://helios-i.mashable.com/imagery/articles/00Wf2m3YW9BRhx4FWHLXp0J/images-1.fit_lim.size_256x.png",
           descripción : "El iPad Pro de quinta generación ofrece la mejor experiencia de iPad. El innovador chip M1 impulsa un rendimiento de nivel superior. La pantalla Liquid Retina XDR del iPad Pro (12,9 pulgadas) ofrece un rango dinámico extremo para una experiencia visual aún más sorprendente. La cámara TrueDepth cuenta con una nueva cámara ultra ancha de 12MP con Center Stage, que lo mantiene perfectamente encuadrado en las videollamadas." , 
     },
     
