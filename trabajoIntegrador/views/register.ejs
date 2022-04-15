@@ -12,15 +12,18 @@
 				<h2 class="products-title">Registrate</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<div class="login">
-				<h1>Login</h1>
-				<form method="post" class="form-register">
-					<input type="text" name="u" placeholder="Username" required="required" />
-					<input type="password" name="p" placeholder="Password" required="required" />
-					<button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+			<h2 class="col-12">
+				<form action="GET" action="/users/register">
+					<label for=""> Email </label>
+					<input type="text" email="email">
 				</form>
-			</div>
-
+			</h2>
+			<h2 class="col-12">
+				<form action="GET" action="/users/register">
+					<label for=""> Usuario </label>
+					<input type="text" name="usuario">
+				</form>
+			</h2>
 
 	<!-- footer -->
 	<%- include('./partials/footer') %> 
