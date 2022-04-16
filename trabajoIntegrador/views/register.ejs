@@ -15,7 +15,7 @@
 			<h2 class="col-12">
 				<form action="GET" action="/users/register">
 					<label for=""> Email </label>
-					<input type="email" email="email">
+					<input type="email" email="email" placeholder="...@gmail.com">
 				</form>
 			</h2>
 			<h2 class="col-12">
@@ -38,12 +38,20 @@
 			</h2>
 			<h2 class="col-12">
 				<form action="GET" action="/users/register">
-					<label for="">nro de documento </label>
-					<input type="number" name="nro de documento">
+					<label for="">Número de documento </label>
+					<input type="number" name="numero de documento" maxlength="8" >
 				</form>
 			</h2>
-			
+			<h2 class="col-12">
+				<form action="GET" action="/users/register">
+						<input type="reset" value="Borrar"></input>
+						<input type="submit" value="Enviar"></input>
+				</form>
+			</h2>
+		</div>
+		
 
+    </div>
 	<!-- footer -->
 	<%- include('./partials/footer') %> 
 	<!-- /footer -->
