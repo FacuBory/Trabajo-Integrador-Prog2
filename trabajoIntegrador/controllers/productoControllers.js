@@ -7,9 +7,9 @@ let productoControllers ={
       },
 
     detalleProducto: function (req, res){
-        let idProducto = req.params.id
+      let idProducto = req.params.id
         return res.render('products',{
-          producto: data.productos[idProducto],
+          detalleProducto: data.productos[idProducto],
           comentarios: data.comentarios
         })
 }}
