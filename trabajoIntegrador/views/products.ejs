@@ -25,7 +25,7 @@
 								<%= detalleProducto.descripción %> 
 							</p>
 						</article>
-						 <% for( let i=0; i < 12; i++ ) { %>
+						 <% for( let i=0; i < 4; i++ ) { %>
 
 							 <div class="col-12 col-lg-4">
 								<section class="comments">
@@ -43,13 +43,13 @@
 										</div>
 									</article>
 									<% } %>
-
+									<form class="form" action="" method="POST">
+										<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+										<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+									</form>
 								</section>
-								<form class="form" action="" method="POST">
-									<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-									<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-								</form>
-								<hr>
+								
+							
 							 </div>
 							
 					</div>
