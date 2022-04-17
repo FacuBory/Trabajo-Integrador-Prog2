@@ -272,7 +272,7 @@ hr {
 
 /*====== Footer ======*/
 .main-footer {
-  background-color: #ffffff;
+  background-color: #bcad84;;
   padding: 20px 0;
   margin-top: 80px;
 }
@@ -286,14 +286,7 @@ hr {
   font-size: 3.5em;
 }
 
-.footer-data h2 {
-  color: var(--gray);
-  font-size: 2.4em;
-  font-weight: 400;
-}
-
-.footer-data p {
-  color: var(--gray);
+.footer-data li {
   font-size: 1.5em;
   font-weight: 300;
 }
@@ -308,7 +301,17 @@ hr {
   color: var(--gray);
   padding: 15px 0;
 }
+.icono{
+  width: 20%;
+  height: 20%;
+  margin: 5%;
 
+}
+.title-footer {
+  font-size: 2.4em;
+  font-weight: 400;
+  text-align: center;
+}
 
 /*====== Product Detail ======*/
 .product-detail {
@@ -535,6 +538,7 @@ textarea.form-input {
 
   .main-footer {
     padding: 40px 0;
+    background-color: #bcad84;
   }
 
   .footer-data {
