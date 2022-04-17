@@ -1,7 +1,7 @@
 const data = {
     usuario : {
-        nombre : "Facundo",
-        apellido : "Bory"
+        nombreDeUsuario : "Facundo Bory",
+        email : "Facundobory@gmail.com"
     },
     productos : [ {
         id : 1,
@@ -78,7 +78,91 @@ const data = {
     },
     
 ],
-    comentarios : [ , , , , , , , , , ]
+    comentarios : [{
+            id : 1,
+            nombreDeUsuario : "Tomas Merlo",
+            comentario : "Muy buen producto, cumplió con las expectativas",
+            imagenDePerfil : "https://images.vexels.com/media/users/3/131351/isolated/lists/126074b5accb18c2419c1c631f1e208f-dibujos-animados-de-cabeza-de-hombre-2.png" , 
+    
+        },
+        {
+            id : 2,
+            nombreDeUsuario : "Micaela Chandia",
+            comentario : "El precio es acorde al producto recibido, muy contenta con lo recibido",
+            imagenDePerfil : "https://images.vexels.com/media/users/3/130530/isolated/lists/1023356046ee98899e69d165bca107c6-personaje-de-cabeza-de-dibujos-animados-de-nina-3.png" , 
+    
+        },
+        {
+            id : 3,
+            nombreDeUsuario : "Juan Perez",
+            comentario : "Recomiendo al 100% este producto, no se van a arrepentir",
+            imagenDePerfil : "https://images.vexels.com/media/users/3/131318/isolated/lists/c969a7b00da3bad9ed9b3dfcf81ec8a6-cabeza-de-dibujos-animados-de-hombre.png" , 
+    
+        },
+        {
+            id : 4,
+            nombreDeUsuario : "Lucas Rodriguez",
+            comentario : "Buen buen precio para este producto, 10 puntos!",
+            imagenDePerfil : "https://images.vexels.com/media/users/3/129729/isolated/preview/68887d934e59d7f76f1a569fed95ee0c-cabeza-de-nino-de-dibujos-animados-1.png" , 
+    
+        },
+        {
+            id : 5,
+            nombreDeUsuario : "Julian Diaz",
+            comentario : "No es lo que esperaba... lo compré con mucha ilusion y no respondió como esperaba",
+            imagenDePerfil : "https://images.vexels.com/media/users/3/131319/isolated/lists/415eb68d31d5de0d090b374238c8109c-cabeza-de-dibujos-animados-hombre-1.png" , 
+    
+        },
+        {
+            id : 6,
+            nombreDeUsuario : "Julieta Ponce",
+            comentario : "Precio algo elevado por el producto recibido",
+            imagenDePerfil : "https://images.vexels.com/media/users/3/129731/isolated/preview/1a65c3115c46b9c362db19a156b5879e-cabeza-de-nina-de-dibujos-animados.png" , 
+    
+        },
+        {
+            id : 7,
+            nombreDeUsuario : "Luis Sánchez",
+            comentario : "Muy buena calidad",
+            imagenDePerfil : "https://images.vexels.com/media/users/3/131350/isolated/lists/11d0e316e9e66e8ead5747b1e17857a6-dibujos-animados-de-cabeza-de-hombre-1.png" , 
+    
+        },
+        {
+            id : 8,
+            nombreDeUsuario : "Valentina Laverde",
+            comentario : "Muy bueno todo, es lo que esperaba",
+            imagenDePerfil : "https://images.vexels.com/media/users/3/131153/isolated/lists/6135f35a1aef773d712a963e1cd9fa7b-cabeza-de-dibujos-animados-de-mujer-japonesa.png" , 
+    
+        },
+        {
+            id : 9,
+            nombreDeUsuario : "Martín Acosta",
+            comentario : "Era un regalo para mi hijo, le encantó, todo genial!",
+            imagenDePerfil : "https://images.vexels.com/media/users/3/129537/isolated/lists/01833767d53ea0272f1d2fdf8dd41ce2-dibujos-animados-de-cabeza-de-nino-2.png" , 
+    
+        },
+        {
+            id : 10,
+            nombreDeUsuario : "Pedro del Divino Niño",
+            comentario : "Precio acorde a la calidad del producto ",
+            imagenDePerfil : "https://images.vexels.com/media/users/3/129515/isolated/lists/7fb084074c0ee8cfc07d1b9cebcb977f-cabeza-de-dibujos-animados-de-nino.png" , 
+    
+        },
+        {
+            id : 11,
+            nombreDeUsuario : "Jairo de Jesús",
+            comentario : "Lo recomiendo sin dudas, cumplió con las expectativas",
+            imagenDePerfil : "https://images.vexels.com/media/users/3/129415/isolated/lists/7c254a2ec872475e908cabc1cc26360f-cabeza-de-dibujos-animados-de-hombre-negro-1.png" , 
+    
+        },
+        {
+            id : 12,
+            nombreDeUsuario : "Gabriel Mejía",
+            comentario : "El producto no es lo que esperaba, espero la devolución",
+            imagenDePerfil : "https://images.vexels.com/media/users/3/129516/isolated/lists/ef174eaa46a9024eee50cd76aaf01027-cabeza-de-dibujos-animados-de-nino-1.png" , 
+    
+        },
+     ]
 }
 
 module.exports = data;
