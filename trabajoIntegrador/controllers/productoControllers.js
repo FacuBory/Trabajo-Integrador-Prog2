@@ -13,6 +13,7 @@ let productoControllers ={
         return res.render('products',{
           detalleProducto: data.productos[idProducto],
           comentarios: data.comentarios
+          
         })
 }}
 

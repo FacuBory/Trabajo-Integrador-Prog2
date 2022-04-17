@@ -3,7 +3,7 @@ const data = {
         nombreDeUsuario : "Facundo Bory",
         email : "Facundobory@gmail.com"
     },
-    productos : [ {
+    productos : [{
         id : 1,
         nombre : "Cafetera Moulinex",
         img : "https://www.dolce-gusto.com.ar/media/catalog/product/cache/d22af66f75f51f60e100631e2c10a99a/g/e/genio_s_plus_hotpoints_1.png",
