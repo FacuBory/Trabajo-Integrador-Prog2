@@ -54,7 +54,7 @@ const data = {
     },
     {
         id : 9,
-        nombre : "Microondas JAMES 31 L",
+        nombre : "Microondas JAMES",
         img : "https://www.nnet.com.uy/imgs/productos/productos31_32700.png",
         descripción : "El Microondas JAMES 31 L presenta un elegante diseño slim con acabados en color negro, detalles en color dorado y puerta de cristal templado.cAhorro de Energía con Zer-On" , 
     },
@@ -72,8 +72,8 @@ const data = {
     },
     {
         id : 12,
-        nombre : "Air Pods Pro",
-        img : "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/airpods-pro-case.png",
+        nombre : "Air Pods",
+        img : "https://img.informer.com/icons_mac/png/128/463/463336.png",
         descripción : "Los AirPods Pro contienen un chip fabricado en silicio, llamado chip H1, situado en cada auricular y que se encarga de las comunicaciones inalámbricas, así como del dispositivo que retransmite el audio. Este chip se ha mejorado para que la autonomía estimada de los auriculares sea mucho mayor, permitiendo gestionar todas las operaciones del dispositivo optimizando su energía" , 
     },
     
