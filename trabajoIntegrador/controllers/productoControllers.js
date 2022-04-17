@@ -3,7 +3,9 @@ let data = require('../db/data')
  
 let productoControllers ={
     info: function(req, res) {
-        res.render('product-add',{});
+        res.render('product-add',{
+          usuarioLogueado: data.usuario
+        });
       },
 
     detalleProducto: function (req, res){

@@ -19,6 +19,11 @@ register: function(req, res, next) {
 },
 login: function(req, res, next) {
   res.render('login',);
+},
+editar: function(req,res){
+  res.render('profile-edit',{
+    usuarioLogueado:data.usuario
+  })
 }
 
 
