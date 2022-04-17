@@ -50,7 +50,31 @@ const data = {
         id : 8,
         nombre : "Ipad Pro 12.9'",
         img : "https://helios-i.mashable.com/imagery/articles/00Wf2m3YW9BRhx4FWHLXp0J/images-1.fit_lim.size_256x.png",
-          descripción : "El iPad Pro de quinta generación ofrece la mejor experiencia de iPad. El innovador chip M1 impulsa un rendimiento de nivel superior. La pantalla Liquid Retina XDR del iPad Pro (12,9 pulgadas) ofrece un rango dinámico extremo para una experiencia visual aún más sorprendente. La cámara TrueDepth cuenta con una nueva cámara ultra ancha de 12MP con Center Stage, que lo mantiene perfectamente encuadrado en las videollamadas." , 
+        descripción : "El iPad Pro de quinta generación ofrece la mejor experiencia de iPad. El innovador chip M1 impulsa un rendimiento de nivel superior. La pantalla Liquid Retina XDR del iPad Pro (12,9 pulgadas) ofrece un rango dinámico extremo para una experiencia visual aún más sorprendente. La cámara TrueDepth cuenta con una nueva cámara ultra ancha de 12MP con Center Stage, que lo mantiene perfectamente encuadrado en las videollamadas." , 
+    },
+    {
+        id : 9,
+        nombre : "Microondas JAMES 31 L",
+        img : "https://www.nnet.com.uy/imgs/productos/productos31_32700.png",
+        descripción : "El Microondas JAMES 31 L presenta un elegante diseño slim con acabados en color negro, detalles en color dorado y puerta de cristal templado.cAhorro de Energía con Zer-On" , 
+    },
+    {
+        id : 10,
+        nombre : "Licuadora ",
+        img : "https://www.rosashermanos.com.uy/imgs/productos/productos31_7007.png",
+        descripción : "La Licuadora Philips HR2030/10 posee un motor potente de 600 W , panel táctil de fácil limpieza , con selector de 3 velocidades + turbo y pulsadores, y jarra de plástico reforzado. Incluye espátula integrada: ideal para preparaciones más espesas. Cuchillas dentadas de larga duración. Cuenta con apertura de la tapa con comando, botón de limpieza rápida y almacenamiento de cable integrado." , 
+    },
+    {
+        id : 11,
+        nombre : "Air Fryer Ninja ",
+        img : "https://helios-i.mashable.com/imagery/articles/0543JsdWamtnSFTjsoN3wBK/images-4.fit_lim.size_256x.png",
+        descripción : "La freidora Philips Airfryer HD9218/71 de color negro, cuenta con dimensiones compactas de 287 mm (largo) x 315 mm (ancho) x 384 mm (altura). Su recipiente de cocción es de fácil limpieza y produce menos olores que las freidoras normales. " , 
+    },
+    {
+        id : 12,
+        nombre : "Air Pods Pro",
+        img : "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/airpods-pro-case.png",
+        descripción : "Los AirPods Pro contienen un chip fabricado en silicio, llamado chip H1, situado en cada auricular y que se encarga de las comunicaciones inalámbricas, así como del dispositivo que retransmite el audio. Este chip se ha mejorado para que la autonomía estimada de los auriculares sea mucho mayor, permitiendo gestionar todas las operaciones del dispositivo optimizando su energía" , 
     },
     
 ],
