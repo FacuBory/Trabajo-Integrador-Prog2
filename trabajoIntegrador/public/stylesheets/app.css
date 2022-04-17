@@ -143,6 +143,10 @@ hr {
 .logout:hover{
   color: #1259c3;
 }
+.logo{
+  height: 60% ;
+  width: 60% ;
+}
 
 
 
@@ -157,11 +161,7 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/images/banner.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  height: 100px;
+ display: flex;
 }
 
 
@@ -497,7 +497,8 @@ textarea.form-input {
   }
 
   .banner {
-    height: 320px;
+    height: auto;
+    width: auto;
   }
 
   .btn-toggle-navbar {
@@ -538,5 +539,9 @@ textarea.form-input {
   .footer-data {
     width: 95%;
     margin: auto;
+  }
+  .logo{
+    height: 90% ;
+    width: 90% ;
   }
 }
