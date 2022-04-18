@@ -5,10 +5,10 @@ const data = {
     },
     productos : [{
         id : 1,
-        nombre : "Cafetera Moulinex",
-        img : "https://www.dolce-gusto.com.ar/media/catalog/product/cache/d22af66f75f51f60e100631e2c10a99a/g/e/genio_s_plus_hotpoints_1.png",
-        descripción : "Esta cafetera de cápsulas ultrapequeña Nescafé® Dolce Gusto® Piccolo XS de estilo moderno ocupa muy poco y cuenta con un gran diseño que encaja en cualquier cocina. Prepara unos cafés de calidad profesional con una espuma densa y cremosa gracias a su sistema de alta presión (hasta 15 bares). Como nuestras cápsulas están selladas herméticamente, el café conserva toda su frescura y disfrutarás siempre de todo su aroma y cremosidad. Solo tienes que introducir la cápsula y bajar la palanca para preparar tu bebida preferida de entre las 30 opciones disponibles: espresso, lungo, cappuccino, latte macchiato e incluso chocolate caliente, tés y bebidas frías. Voltaje 220-240 v Potencia 1340-1600 Frecuencia 50-60 hz Ajustes de personalización Detención manual Presión 15 Personalización de la cantidad Bebidas calientes y frías Capacidad del depósito de agua 0,8 l Depósito de agua extraíble Detención automática de la bebida No Recetario Ristretto, espresso intenso, lungo aromático, grande con cuerpo, cappuccino espumoso, latte macchiato suave, o incluso chocolate caliente, tés y bebidas frías Sistema de leche Cápsula" , 
-
+        nombre : "Samsung Samrt Tv",
+        img : "https://probuykenya.com/public/uploads/products/thumbnail/tLtFOTrTfgWIpMtZA53eQ0ejGf4fngvtIBfBZAFV.png",
+        descripción : "Los Samsung Smart TV 2020 combinan nuevas tecnologías y diseño para proporcionar a los espectadores una experiencia innovadora. Por otra parte, gracias al Infinity Design ligeramente inclinado hacia atrás, los modelos insignia Q900 y Q950 ofrecen la mejor experiencia envolvente. " , 
+        
     },
     {
         id : 2,
@@ -24,9 +24,10 @@ const data = {
     },
     {
         id : 4,
-        nombre : "Samsung Samrt Tv",
-        img : "https://probuykenya.com/public/uploads/products/thumbnail/tLtFOTrTfgWIpMtZA53eQ0ejGf4fngvtIBfBZAFV.png",
-        descripción : "Los Samsung Smart TV 2020 combinan nuevas tecnologías y diseño para proporcionar a los espectadores una experiencia innovadora. Por otra parte, gracias al Infinity Design ligeramente inclinado hacia atrás, los modelos insignia Q900 y Q950 ofrecen la mejor experiencia envolvente. " , 
+        nombre : "Cafetera Moulinex",
+        img : "https://www.dolce-gusto.com.ar/media/catalog/product/cache/d22af66f75f51f60e100631e2c10a99a/g/e/genio_s_plus_hotpoints_1.png",
+        descripción : "Esta cafetera de cápsulas ultrapequeña Nescafé® Dolce Gusto® Piccolo XS de estilo moderno ocupa muy poco y cuenta con un gran diseño que encaja en cualquier cocina. Prepara unos cafés de calidad profesional con una espuma densa y cremosa gracias a su sistema de alta presión (hasta 15 bares). Como nuestras cápsulas están selladas herméticamente, el café conserva toda su frescura y disfrutarás siempre de todo su aroma y cremosidad. Solo tienes que introducir la cápsula y bajar la palanca para preparar tu bebida preferida de entre las 30 opciones disponibles: espresso, lungo, cappuccino, latte macchiato e incluso chocolate caliente, tés y bebidas frías. Voltaje 220-240 v Potencia 1340-1600 Frecuencia 50-60 hz Ajustes de personalización Detención manual Presión 15 Personalización de la cantidad Bebidas calientes y frías Capacidad del depósito de agua 0,8 l Depósito de agua extraíble Detención automática de la bebida No Recetario Ristretto, espresso intenso, lungo aromático, grande con cuerpo, cappuccino espumoso, latte macchiato suave, o incluso chocolate caliente, tés y bebidas frías Sistema de leche Cápsula" , 
+
     },
     {
         id : 5,
