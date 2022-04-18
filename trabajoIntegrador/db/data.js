@@ -19,7 +19,7 @@ const data = {
     {
         id : 3,
         nombre : "Samsung Galaxy S10",
-        img : "https://images.samsung.com/latin/smartphones/galaxy-s10/buy/m-img-s10-prismgreen-01.png",
+        img : "https://cdn.webshopapp.com/shops/15250/files/384521476/256x256x2/used-samsung-galaxy-s10-plus-blue.jpg",
         descripción : "Samsung Galaxy S10 es una línea de teléfonos inteligentes Android de gama alta fabricados por Samsung. Revelados durante un evento el 20 de febrero de 2019, comprados en preventa, los dispositivos se enviaron el 8 de marzo de 2019. Al igual que el Galaxy S9, el nuevo dispositivo tiene sus modelos S10 y S10+ respectivamente, se diferencian principalmente en el tamaño de la pantalla, en la ubicación de la huella digital y en la cámara delantera adicional. Además, Samsung también lanzó una versión más pequeña llamado el Galaxy S10e y una versión compatible con la tecnología 5G." , 
     },
     {
