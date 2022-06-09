@@ -1,5 +1,6 @@
 
 let data = require('../db/data');
+//let user = db.User
 
 const userController = {
 profile: function(req, res, next) {
@@ -17,9 +18,22 @@ userDeslogueado: function(req, res, next) {
 register: function(req, res, next) {
   res.render('register',);
 },
+procesarRegister: function (req,res,next){
+  res.render('register',);
+},
+
 login: function(req, res, next) {
   res.render('login',);
 },
+
+procesarLogin: function (req,res,next){
+let info = req.body
+return res.send (info.email)
+//user.findOne({
+  //where : [ email = info.email]//
+//})//
+},
+
 editar: function(req,res){
   res.render('profile-edit',{
     usuarioLogueado:data.usuario

@@ -5,6 +5,7 @@ let userControllers = require('../controllers/userControllers')
 router.get('/profile', userControllers.profile);
 router.get('/register', userControllers.register);
 router.get('/login', userControllers.login);
+router.post('/login', userControllers.procesarLogin);
 router.get('/edit/profile',userControllers.editar)
 
 module.exports = router;

@@ -14,9 +14,9 @@
 			<!-- Show the "ultimos" products -->
 			<div class="login">
 				<h1>Login</h1>
-				<form method="get" action ="/users/profile"  class="form-register">
-					<input type="text" name="u" placeholder="Usuario" required="required" />
-					<input type="password" name="p" placeholder="Contraseña" required="required" />
+				<form method="POST" action ="/users/login"  class="form-register">
+					<input type="text" name="email" placeholder="Usuario" required="required" />
+					<input type="password" name="password" placeholder="Contraseña" required="required" />
 					<input type="checkbox" id="botonrecordame" value="first_checkbox"> Recordar esta cuenta
 					
 					<button type="submit" class="btn btn-primary btn-block btn-large">Iniciar sesión</button>
