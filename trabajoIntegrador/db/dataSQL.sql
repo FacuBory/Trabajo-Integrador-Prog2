@@ -9,7 +9,7 @@ apellido   VARCHAR(50)   NOT NULL,
 email      VARCHAR(50)   NOT NULL,
 usuario    VARCHAR(50)   NOT NULL,
 contraseña VARCHAR(50)   NOT NULL,
-fecha_de_nacimiento DATE NOT NULL,
+fechaNacimiento DATE NOT NULL,
 dni INT UNSIGNED         NOT NULL,
 fotoPerfil       VARCHAR(400),
 seguidores        INT,
@@ -32,9 +32,9 @@ comentarios INT
 
 CREATE TABLE comentarios(
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-id_usuario_comentador INT UNSIGNED,
-id_producto_comentado INT UNSIGNED,
-texto TEXT,
+idUsuarioComentador INT UNSIGNED,
+idProductoComentado INT UNSIGNED,
+texto VARCHAR(10000),
 imagen VARCHAR(500),
 	FOREIGN KEY (id_usuario_comentador) REFERENCES  usuario(id),
     FOREIGN KEY (id_producto_comentado) REFERENCES  producto(id)
@@ -42,8 +42,8 @@ imagen VARCHAR(500),
 
 CREATE TABLE seguidores(
 id INT PRIMARY KEY AUTO_INCREMENT,
-id_usuario_seguidor INT UNSIGNED,
-id_usuario_seguido INT UNSIGNED,
+idUsuarioSeguidor INT UNSIGNED,
+idUsuarioSeguido INT UNSIGNED,
 	FOREIGN KEY (id_usuario_seguidor) REFERENCES usuario(id),
 	FOREIGN KEY (id_usuario_seguido) REFERENCES usuario(id)
 );
