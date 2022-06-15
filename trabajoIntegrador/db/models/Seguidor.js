@@ -16,6 +16,11 @@ module.exports = function (sequelize, dataTypes){
         }
     };
 
-    let config = {};
-    
+    let config = {
+        tableName: 'seguidor',
+        timestamps: false,
+        underscored: true,
+    };
+    const seguidorTabla = sequelize.define(alias,cols,config);
+    return seguidorTabla
 };

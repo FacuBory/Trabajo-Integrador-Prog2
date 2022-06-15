@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<%- include('./partials/head') %> 
+<body>
+	
+
+	<!-- Datos del usuario -->
+	<section class="info-usuario container products-wrapper">
+		<div class="row">
+			<div class="img-container offset-3 col-2">
+				<img src="https://images.vexels.com/media/users/3/131318/isolated/lists/c969a7b00da3bad9ed9b3dfcf81ec8a6-cabeza-de-dibujos-animados-de-hombre.png" alt="foto de perfil" class="foto-perfil">
+			</div>
+			<div class="data-container col-6">
+				<div class="d-flex align-items-center ">
+					<h1 class="main-title">
+						<a href="/users/edit/profile">
+							<i class="fas fa-cog"></i>
+						</a>
+					</h1>
+					
+					<a class="btn mt-3 ml-4" href="">SEGUIR</a>
+					
+				</div>
+				<p class=""></p>
+				<div>
+					<ul class="">
+						<li>4 productos</li>
+						<li>1400 seguidores</li>
+						<li>178 comentarios</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /Datos del usuario -->
+
+	<!-- Mis productos -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Mis productos</h2>
+			</div>
+			<!-- Show mis productos -->
+			<% for( let i = 0; i < 4; i++ ) { %>
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<a href="/product/detalle">
+							<figure class="product-box_image">
+								<img src="<%= listaProducto[i].img %>" alt="cafetera moulinex">
+							</figure>
+							<article class="product-box_data">
+								<h2 class="nombrestyle"><%= listaProducto[i].nombre %> </h2>
+								<p class="descripcionstyle"> <%= listaProducto[i].descripción %></p>
+								<p>Comentarios: 12</p>
+							</article>
+						</a>
+					</section>
+				</div>
+			<% } %>
+		</div>
+	</div>
+	<!-- /Mis productos -->
+
+
+	<!-- footer -->
+	<%- include('./partials/footer') %> 
+	<!-- /footer -->
+</body>	
+</html>

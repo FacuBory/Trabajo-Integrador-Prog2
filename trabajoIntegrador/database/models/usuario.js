@@ -17,16 +17,14 @@ module.exports = function (sequelize, dataTypes){
             allowNull: false
         },
         email: {
-            type: dataTypes.STRING,
-            allowNull: false
+            type: dataTypes.STRING
         },
         contraseña: {
             type: dataTypes.STRING,
             allowNull: false
         },
         fechaNacimiento: {
-            type: dataTypes.DATE,
-            allowNull: false
+            type: dataTypes.DATE
         },
         dni: {
             type: dataTypes.INTEGER,
@@ -48,10 +46,10 @@ module.exports = function (sequelize, dataTypes){
     
     let config = {
         tableName: 'usuario',
-        timestamps: false,
-        underscored: true,
+        timestamps:false,
+        underscored:false,
     };
-    
-    const usuarioTabla = sequelize.define(alias,cols,config);
+    const usuarioTabla = sequelize.define(alias,cols,config)
     return usuarioTabla
 }
+

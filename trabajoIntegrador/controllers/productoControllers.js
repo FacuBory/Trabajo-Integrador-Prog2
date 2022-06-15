@@ -1,10 +1,10 @@
 
-let data = require('../db/data')
+//let data = require('../database/models')
  
 let productoControllers ={
     info: function(req, res) {
         res.render('product-add',{
-          usuarioLogueado: data.usuario
+          usuarioLogueado: "dfdgf"
         });
       },
 

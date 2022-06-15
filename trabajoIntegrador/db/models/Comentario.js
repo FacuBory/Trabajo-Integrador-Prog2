@@ -23,6 +23,11 @@ module.exports = function (sequelize, dataTypes){
         }
     };
 
-    let config = {};
-    
+    let config = {
+        tableName: 'comentario',
+        timestamps: false,
+        underscored: true,
+    };
+    const comentarioTabla = sequelize.define(alias,cols,config);
+    return comentarioTabla
 };

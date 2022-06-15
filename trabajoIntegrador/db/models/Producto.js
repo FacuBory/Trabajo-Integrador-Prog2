@@ -38,6 +38,12 @@ module.exports = function (sequelize, dataTypes){
         }
     };
 
-    let config = {};
+    let config = {
+        tableName: 'producto',
+        timestamps: false,
+        underscored: true,
+    };
     
-}
+    const productoTabla = sequelize.define(alias,cols,config);
+    return productoTabla
+};
