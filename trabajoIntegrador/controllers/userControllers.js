@@ -39,12 +39,12 @@ procesarRegister: function (req,res,next){
     created_at: new Date (),
     updated_at: new Date()
   }
-console.log(usuarioParaGuardar);
+
   user.create(usuarioParaGuardar)
   .then((result)=>{
     return res.redirect("/users/login")
   })
-  res.send(usuarioParaGuardar)
+  
 },
 
 login: function(req, res, next) {
