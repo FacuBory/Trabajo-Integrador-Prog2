@@ -23,6 +23,7 @@ procesarRegister: function (req,res,next){
   let info = req.body
   console.log(info.email);
   let passEncriptada = bcryptjs.hashSync (info.contrasenia,10);
+  let fotoDePerfil = req.file.filename;
   let usuarioParaGuardar = {
     nombre : info.nombre,
     apellido: info.apellido,
@@ -37,7 +38,8 @@ procesarRegister: function (req,res,next){
     productosSubidos:3,
     remember_token : "false",
     created_at: new Date (),
-    updated_at: new Date()
+    updated_at: new Date(),
+    fotoPerfil : fotoDePerfil
   }
 
   user.create(usuarioParaGuardar)
