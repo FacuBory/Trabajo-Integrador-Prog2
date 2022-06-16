@@ -24,13 +24,13 @@ module.exports = function (sequelize, dataTypes){
         condicion: {
             type: dataTypes.STRING
         },
-        tipoProducto: {
+        tipo_producto: {
             type: dataTypes.STRING
         },
-        createdAt: {
+        created_at: {
             type: dataTypes.DATE
         },
-        updateAt: {
+        update_at: {
             type: dataTypes.DATE
         },
         comentarios: {
@@ -40,7 +40,7 @@ module.exports = function (sequelize, dataTypes){
 
     let config = {
         tableName: 'producto',
-        timestamps: false,
+        timestamps: true,
         underscored: true,
     };
     
