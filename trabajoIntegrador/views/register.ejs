@@ -1,64 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
-<%- include('./partials/head') %> 
-<body>
-	<%- include('./partials/header-deslogueado') %> 
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Registrate</h2>
+<%- include('./partials/head') %>
+
+	<body>
+		<%- include('./partials/header-deslogueado') %>
+			<!-- Novedades -->
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-title">Registrate</h2>
+					</div>
+					<!-- Show the "ultimos" products -->
+					<div class="col-12">
+						<form method="POST" action="/users/profile">
+							<h2 class="col-12">
+							<label for=""> Email </label>
+							<input name="email" type="email" placeholder="...@gmail.com">
+							</h2>
+							
+							<h2 class="col-12">
+
+								<label for=""> Nombre </label>
+								<input type="text" name="nombre">
+
+							</h2>
+							<h2 class="col-12">
+
+								<label for=""> Apellido </label>
+								<input type="text" name="apellido">
+
+							</h2>
+							<h2 class="col-12">
+
+								<label for=""> Nombre de Usuario </label>
+								<input type="text" name="usuario">
+
+							</h2>
+							<h2 class="col-12">
+
+								<label for="">Contraseña </label>
+								<input type="password" name="contrasenia">
+
+							</h2>
+							<h2 class="col-12">
+
+								<label for="">Fecha de nacimiento </label>
+								<input name="fechaNacimiento" type="date" >
+
+							</h2>
+							<h2 class="col-12">
+
+								<label for="">Número de documento </label>
+								<input type="number" name="dni" maxlength=8>
+
+							</h2>
+							<h2 class="col-12">
+
+								<label for="">Foto de perfil </label>
+								<input type="file" name="fotoDePerfil">
+
+							</h2>
+							<h2 class="col-12">
+
+								<input type="submit" value="Enviar"></input>
+
+							</h2>
+						</form>
+					</div>
+				</div>
+
+
 			</div>
-			<!-- Show the "ultimos" products -->
-			<h2 class="col-12">
-				<form method="POST" action="/users/profile">
-					<label for=""> Email </label>
-					<input name="email" type="email" placeholder="...@gmail.com">
-				
-			</h2>
-			<h2 class="col-12">
-				
-					<label for=""> Usuario </label>
-					<input type="text" name="usuario">
-				
-			</h2>
-			<h2 class="col-12">
-				
-					<label for="">Contraseña </label>
-					<input type="password" name="contrasenia">
-				
-			</h2>
-			<h2 class="col-12">
-				
-					<label for="">Fecha de nacimiento </label>
-					<input name= "fechaNacimiento" type="date" name="nacimiento">
-				
-			</h2>
-			<h2 class="col-12">
-				
-					<label for="">Número de documento </label>
-					<input type="number" name="dni" maxlength=8 >
-				
-			</h2>
-			<h2 class="col-12">
-				
-					<label for="">Foto de perfil </label>
-					<input type="file" name="foto de perfil">
-				
-			</h2>
-			<h2 class="col-12">
-				
-						<input type="submit" value="Enviar"></input>
-				</form>
-			</h2>
-		</div>
-		
+			<!-- footer -->
+			<%- include('./partials/footer') %>
 
-    </div>
-	<!-- footer -->
-	<%- include('./partials/footer') %> 
-
-</body>
+	</body>
 
 </html>

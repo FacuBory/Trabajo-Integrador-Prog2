@@ -2,7 +2,7 @@
 <html lang="es">
 
 <!-- Include Head -->
-<%- include('./partials/head') %> 
+<%- include('./partials/header') %> 
 <body>
 	
 	<%- include('./partials/header-deslogueado')  %> 
@@ -25,11 +25,11 @@
 					<section class="product-box">
 						<a href="/product/detalle/<%= i %> ">
 							<figure class="product-box_image">
-								<img src="<%= listaProducto[i].img %>" alt="cafetera moulinex">
+								<img src="<%= listaProductos[i].img %>" alt="cafetera moulinex">
 							</figure>
 							<article class="product-box_data">
-								<h2 class="nombrestyle"><%= listaProducto[i].nombre %> </h2>
-								<p class="descripcionstyle"> <%= listaProducto[i].descripción %></p>
+								<h2 class="nombrestyle"><%= listaProductos[i].nombre %> </h2>
+								<p class="descripcionstyle"> <%= listaProductos[i].descripción %></p>
 								<p>Comentarios: 12</p>
 							</article>
 						</a>
@@ -51,11 +51,11 @@
 					<section class="product-box">
 						<a href="/product/detalle/<%= i %> ">
 							<figure class="product-box_image">
-								<img src="<%=listaProducto[i].img %> " alt="">
+								<img src="<%=listaProductos[i].img %> " alt="">
 							</figure>
 							<article class="product-box_data">
-								<h2><%= listaProducto[i].nombre %> </h2>
-								<p><%= listaProducto[i].descripción %> </p>
+								<h2><%= listaProductos[i].nombre %> </h2>
+								<p><%= listaProductos[i].descripción %> </p>
 								<p>Comentarios: 12</p>
 							</article>
 						</a>

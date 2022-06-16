@@ -1,4 +1,4 @@
-
+var express = require('express')
 let db = require('../database/models');
 let user = db.Usuario;
 const bcryptjs = require ('bcryptjs');
@@ -7,8 +7,8 @@ const userController = {
 profile: function(req, res, next) {
 
   res.render('profile',{
-    //usuarioLogueado:data.usuario,
-    //listaProducto : data.productos
+    usuarioLogueado:data.usuario,
+    listaProducto : data.productos
   });
 },
 
@@ -24,13 +24,14 @@ procesarRegister: function (req,res,next){
   console.log(info.email);
   let passEncriptada = bcryptjs.hashSync (info.contrasenia,10);
   let usuarioParaGuardar = {
-    nombre : info.usuario,
-    apellido: "merlo",
+    nombre : info.nombre,
+    apellido: info.apellido,
     email : info.email,
+    usuario: info.usuario,
     contraseña: passEncriptada,
-    fechadeNacimiento: info.fechadeNacimiento,
+    fechadeNacimiento: info.fechaNacimiento,
     dni: info.dni,
-    fotoDePerfil: "12e2wodsnv9aerv",
+    fotoDePerfil: info.fotoDePerfil,
     seguidores:200,
     comentarios:450,
     productosSubidos:3,
@@ -50,12 +51,22 @@ login: function(req, res, next) {
   res.render('login',);
 },
 
-procesarLogin: function (req,res,next){
+procesarLogin: function (req,res){
 let info = req.body
-return res.send (info.email)
-//user.findOne({
-  //where : [ email = info.email]//
-//})//
+user.findOne({
+  where : [ email = info.email]
+ })
+ .then((result)=>{
+   if(result != null){
+     let claveCorrecta = bcryptjs.compareSync(info.password,result.password)
+     if( claveCorrecta ){
+       req.session.user = result.dataValues 
+       console.log(req.session.user)
+     }
+   }
+
+ })
+
 },
 
 editar: function(req,res){
