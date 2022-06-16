@@ -30,7 +30,7 @@ module.exports = function (sequelize, dataTypes){
         created_at: {
             type: dataTypes.DATE
         },
-        update_at: {
+        updated_at: {
             type: dataTypes.DATE
         },
         comentarios: {

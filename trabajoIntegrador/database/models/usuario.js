@@ -22,7 +22,7 @@ module.exports = function (sequelize, dataTypes){
         usuario: {
             type: dataTypes.STRING
         },
-        contraseña: {
+        contrasenia: {
             type: dataTypes.STRING,
             allowNull: false
         },

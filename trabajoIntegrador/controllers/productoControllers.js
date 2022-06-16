@@ -1,5 +1,5 @@
 
-//let data = require('../database/models')
+let data = require('../database/models')
  
 let productoControllers ={
     info: function(req, res) {

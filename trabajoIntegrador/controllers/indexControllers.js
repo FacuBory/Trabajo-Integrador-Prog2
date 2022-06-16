@@ -5,7 +5,7 @@ const Producto = db.producto;
 const indexController = {
   index: (req, res) => {
 
-    let counter = req.session.contador;
+    /*let counter = req.session.contador;
     if (counter != undefined) {
       counter += 1
     } else {
@@ -13,18 +13,15 @@ const indexController = {
     }
 
     req.session.contador = counter;
+    console.log(counter)*/
 
 
     db.Producto.findAll()
       .then((result) => {
-        return res.render("products", {
+        return res.render("index", {
           listaProductos: result,
           contador: req.session.contador
         })
-
-      .catch(error =>{
-        return res.send(error)
-      })
         
       });
      

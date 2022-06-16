@@ -28,7 +28,7 @@ procesarRegister: function (req,res,next){
     apellido: info.apellido,
     email : info.email,
     usuario: info.usuario,
-    contraseña: passEncriptada,
+    contrasenia: passEncriptada,
     fechadeNacimiento: info.fechaNacimiento,
     dni: info.dni,
     fotoDePerfil: info.fotoDePerfil,
