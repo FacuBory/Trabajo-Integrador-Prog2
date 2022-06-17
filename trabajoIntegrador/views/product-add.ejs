@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include('./partials/head') %>
+<%- include('./partials/header') %>
 
 	<body>
-		<%- include('./partials/header-logueado') %>
+		
 
 			<!-- Novedades -->
 			<div class="container products-wrapper">
@@ -14,7 +14,7 @@
 					</div>
 					<!-- Show the "ultimos" products -->
 
-					<form action="POST" action="/users/register">
+					<form method="POST" action="/product/product-add">
 						<h2 class="col-12">
 
 							<label for="">Foto del Producto</label>
@@ -33,13 +33,6 @@
 
 							<label for=""> Descripcion del Producto </label>
 							<input type="text" name="descripcionProducto">
-
-						</h2>
-
-						<h2 class="col-12">
-
-							<label for="">Fecha de Carga </label>
-							<input type="date" name="fechaCarga">
 
 						</h2>
 
@@ -66,8 +59,15 @@
 
 						<h2 class="col-12">
 
+							<label for="">Fecha de Carga </label>
+							<input type="date" name="fechaCarga">
+
+						</h2>
+
+						<h2 class="col-12">
+
 							<input type="submit" value="AÑADIR"></input>
-							<input type="reset" value="BORRAR"></input>
+							
 
 						</h2>
 					</form>

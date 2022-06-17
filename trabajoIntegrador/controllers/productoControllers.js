@@ -19,31 +19,27 @@ let productoControllers = {
 
     })
   },
-  create: (req,res) => {
-  if(req.session.user != undefined){
-    return res.render('register')
-  }else{
-    return res.render('login')
-  }
+  create: (req, res) => {
+    return res.render('product-add')
   },
 
-  store: (req,res)=>{
+  store: (req, res) => {
     let info = req.body
     let productoGuardado = {
-    nombre: info.nombreProducto,
-    imagen: info.fotoDeProducto,
-    descripcion: info.descripcionProducto,
+      nombre: info.nombreProducto,
+      imagen: info.fotoDeProducto,
+      descripcion: info.descripcionProducto,
+      marca: info.marcaProducto,
+      condicion: info.condicionProducto,
+      tipo_producto: info.tipoDeProducto,
+      created_at: info.fechaCarga,
     }
-    productoNuevo.create(
-      productoGuardado
-      )
-      console.log(productoGuardado)
+    productoNuevo.create(productoGuardado)
       .then((result) => {
         return res.redirect("/")
       })
-    }
-    
-  }
+
+    }}
 
   
 

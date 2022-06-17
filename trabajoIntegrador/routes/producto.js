@@ -4,9 +4,9 @@ let productoControllers = require('../controllers/productoControllers')
 /* GET home page. */
 router.get('/product-add',productoControllers.info)
 router.get('/detalle/:id',productoControllers.detalleProducto)
-router.get('/users/register', productoControllers.create);
 
-router.post('/users/register', productoControllers.store);
+router.get('/product-add', productoControllers.create);
+router.post('/product-add', productoControllers.store);
 
 
 module.exports = router;
