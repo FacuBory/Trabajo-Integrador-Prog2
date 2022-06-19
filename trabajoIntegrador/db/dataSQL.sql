@@ -36,16 +36,16 @@ idUsuarioComentador INT UNSIGNED,
 idProductoComentado INT UNSIGNED,
 texto VARCHAR(10000),
 imagen VARCHAR(500),
-	FOREIGN KEY (id_usuario_comentador) REFERENCES  usuario(id),
-    FOREIGN KEY (id_producto_comentado) REFERENCES  producto(id)
+	FOREIGN KEY (idUsuarioComentador) REFERENCES  usuario(id),
+    FOREIGN KEY (idProductoComentado) REFERENCES  producto(id)
 );
 
 CREATE TABLE seguidores(
 id INT PRIMARY KEY AUTO_INCREMENT,
 idUsuarioSeguidor INT UNSIGNED,
 idUsuarioSeguido INT UNSIGNED,
-	FOREIGN KEY (id_usuario_seguidor) REFERENCES usuario(id),
-	FOREIGN KEY (id_usuario_seguido) REFERENCES usuario(id)
+	FOREIGN KEY (idUsuarioSeguidor) REFERENCES usuario(id),
+	FOREIGN KEY (idUsuarioSeguido) REFERENCES usuario(id)
 );
 
 

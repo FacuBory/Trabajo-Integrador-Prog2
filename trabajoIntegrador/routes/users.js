@@ -14,10 +14,10 @@ let storage = multer.diskStorage({
     filename : function(req,file, cb) {
         /* facu.png */
          /*    name campoDelForm   -    16062022        .png */
-        cb(null, file.fieldname + '-' + Date.now() + path.extname())
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
     }
 });
-let upload = multer({ storage : storage})
+let upload = multer({ storage : storage});
 
 /* GET users listing. */
 router.get('/profile', userControllers.profile);
