@@ -7,8 +7,8 @@ const userController = {
   profile: function (req, res, next) {
 
     res.render('profile', {
-      usuarioLogueado: data.usuario,
-      listaProducto: data.productos
+      usuarioLogueado: db.usuario,
+      listaProducto: db.productos
     });
   },
 
@@ -62,7 +62,16 @@ const userController = {
       user.create(usuarioParaGuardar)
         .then((result) => {
           return res.redirect("/users/login")
-        });
+        }).catch((error)=>{
+          if (error.errors[0].validatorKey == "not_unique") {
+            errors.message = "Este mail esta en uso. Intente con otro o recuerde su contraseña"
+            res.locals.errors = errors
+            return res.render('register')
+          } else {
+            console.log(error)
+            return res.render('register')
+          }
+        })
 
     }
   },
@@ -78,7 +87,6 @@ const userController = {
       where: [{ email: info.email }]
     }).then((result) => {
       if (result != null) {
-        let pass = bcryptjs.hashSync(info.password,10);
 
         let claveCorrecta = bcryptjs.compareSync(info.password, result.contrasenia);
         if (claveCorrecta) {
@@ -103,7 +111,7 @@ const userController = {
 
   editar: function (req, res) {
     res.render('profile-edit', {
-      //usuarioLogueado:data.usuario
+      usuarioLogueado:db.usuario
     })
   },
 
