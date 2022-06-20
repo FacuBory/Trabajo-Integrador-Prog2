@@ -105,6 +105,12 @@ const userController = {
     res.render('profile-edit', {
       //usuarioLogueado:data.usuario
     })
+  },
+
+  logout: function(req,res){
+    req.session.destroy();
+    res.clearCookie("usuarioId");
+    return res.redirect("/")
   }
 
 
