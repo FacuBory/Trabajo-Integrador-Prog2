@@ -1,6 +1,6 @@
 
 const db = require('../database/models');
-let data = require('../database/models');
+
 const Producto = require('../database/models/Producto');
 let productoNuevo = db.Producto;
 
@@ -14,11 +14,21 @@ let productoControllers = {
   detalleProducto: function (req, res) {
     let idProducto = req.params.id
     return res.render('products', {
-      detalleProducto: data.productos[idProducto],
-      comentarios: data.comentarios
+      detalleProducto: db.productos[idProducto],
+      comentarios: db.comentarios
 
     })
   },
+  show: function(req,res){
+  let id = req.params.id
+  db.Producto.findByPk(id)
+  .then((result)=>{
+    return res.render("products",{
+      producto : result
+    });
+  })
+  },
+
   create: (req, res) => {
     return res.render('product-add')
   },
