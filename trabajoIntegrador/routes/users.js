@@ -22,7 +22,7 @@ let upload = multer({ storage : storage});
 /* GET users listing. */
 router.get('/profile', userControllers.profile);
 router.get('/register', userControllers.register);
-router.post('/profile', upload.single('fotoDePerfil'), userControllers.procesarRegister);
+router.post('/register', upload.single('fotoDePerfil'), userControllers.procesarRegister);
 router.get('/login', userControllers.login);
 router.post('/login', userControllers.procesarLogin);
 router.get('/edit/profile',userControllers.editar)

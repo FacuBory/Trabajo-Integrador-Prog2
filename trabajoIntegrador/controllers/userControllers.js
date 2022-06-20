@@ -21,32 +21,50 @@ const userController = {
   },
   procesarRegister: function (req, res, next) {
     let info = req.body
-    console.log(info.email);
-    let passEncriptada = bcryptjs.hashSync(info.contrasenia, 10);
-    let fotoDePerfil = req.file.filename;
-    let usuarioParaGuardar = {
-      nombre: info.nombre,
-      apellido: info.apellido,
-      email: info.email,
-      usuario: info.usuario,
-      contrasenia: passEncriptada,
-      fechadeNacimiento: info.fechaNacimiento,
-      dni: info.dni,
-      fotoDePerfil: info.fotoDePerfil,
-      seguidores: 200,
-      comentarios: 450,
-      productosSubidos: 3,
-      remember_token: "false",
-      created_at: new Date(),
-      updated_at: new Date(),
-      fotoPerfil: fotoDePerfil
+
+    let errors = {};
+    if (info.nombre == "") {
+      errors.message = "Ingrese nombre";
+      res.locals.errors = errors;
+      return res.render('register')
     }
+    else if (info.email == "") {
+      errors.message = "Ingrese email";
+      res.locals.errors = errors;
+      return res.render('register')
+    }
+    else if (info.contrasenia == "") {
+      errors.message = "Ingrese contraseña";
+      res.locals.errors = errors;
+      return res.render('register')
+    }
+    else {
+      let passEncriptada = bcryptjs.hashSync(info.contrasenia, 10);
+      let fotoDePerfil = req.file.filename;
+      let usuarioParaGuardar = {
+        nombre: info.nombre,
+        apellido: info.apellido,
+        email: info.email,
+        usuario: info.usuario,
+        contrasenia: passEncriptada,
+        fechaNacimiento: info.fechaNacimiento,
+        dni: info.dni,
+        fotoDePerfil: info.fotoDePerfil,
+        seguidores: 200,
+        comentarios: 450,
+        productosSubidos: 3,
+        remember_token: "false",
+        created_at: new Date(),
+        updated_at: new Date(),
+        fotoPerfil: fotoDePerfil
+      }
 
-    user.create(usuarioParaGuardar)
-      .then((result) => {
-        return res.redirect("/users/login")
-      })
+      user.create(usuarioParaGuardar)
+        .then((result) => {
+          return res.redirect("/users/login")
+        });
 
+    }
   },
 
   login: function (req, res, next) {
@@ -54,22 +72,32 @@ const userController = {
   },
 
   procesarLogin: function (req, res) {
-    let info = req.body
+    let info = req.body;
+    let errors = {};
     user.findOne({
-      where: [email = info.email]
-    })
-    .then((result) => {
-        if (result != null) {
-          let claveCorrecta = bcryptjs.compareSync(info.password, result.password)
-          if (claveCorrecta) {
-            return res.send("hola")
-          } else {
-            return res.send("Existe el mail " + result.email + " pero la clave es incorrecta")
-          }
+      where: [{ email: info.email }]
+    }).then((result) => {
+      if (result != null) {
+        let pass = bcryptjs.hashSync(info.password,10);
 
+        let claveCorrecta = bcryptjs.compareSync(info.password, result.contrasenia);
+        if (claveCorrecta) {
+          req.session.user = result.dataValues;
+          if (req.body.botonrecordame != undefined) {
+            res.cookies('usuarioId', req.session.user.id, { maxAge: 1000 * 6 * 5 })
+          }
+          return res.redirect('/')
         } else {
-          return res.send("No existe el mail " + info.email)
+          errors.message = "La clave es incorrecta"
+          res.locals.errors = errors
+          return res.render('login')
         }
+
+      } else {
+        errors.message = "No existe el mail " + info.email
+        res.locals.errors = errors
+        return res.render('login')
+      }
     });
   },
 

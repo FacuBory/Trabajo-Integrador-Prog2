@@ -16,7 +16,9 @@ const indexController = {
     console.log(counter)*/
 
 
-    db.Producto.findAll()
+    db.Producto.findAll({
+      order : [['created_at','DESC']]
+    })
       .then((result) => {
         return res.render("index", {
           listaProductos: result,

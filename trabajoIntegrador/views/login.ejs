@@ -14,6 +14,10 @@
 			<!-- Show the "ultimos" products -->
 			<div class="login">
 				<h1>Login</h1>
+				<% if(locals.errors){ %>
+					<p class="mensajeError" style="color: red;"> <%= errors.message %>
+					</p>
+				<% } %>
 				<form method="POST" action ="/users/login"  class="form-register">
 					<input type="text" name="email" placeholder="Usuario" required="required" />
 					<input type="password" name="password" placeholder="Contraseña" required="required" />
