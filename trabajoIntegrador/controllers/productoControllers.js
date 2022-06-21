@@ -11,15 +11,22 @@ let productoControllers = {
     });
   },
 
-  
-  show: function(req,res){
-  let id = req.params.id
-  db.Producto.findByPk(id)
-  .then((result)=>{
-    return res.render("products",{
-      detalleProducto : result
-    });
-  })
+
+  show: function (req, res) {
+    let id = req.params.id;
+    db.Producto.findByPk(id, {
+      include: [{
+        association: "productoComentarios",
+        include: [{
+          association: "comentarioUsuario"
+        }]
+      }]
+    })
+      .then((result) => {
+        return res.render("products", {
+          detalleProducto: result
+        });
+      })
   },
 
   create: (req, res) => {
@@ -42,8 +49,9 @@ let productoControllers = {
         return res.redirect("/")
       })
 
-    }}
+  }
+}
 
-  
+
 
 module.exports = productoControllers

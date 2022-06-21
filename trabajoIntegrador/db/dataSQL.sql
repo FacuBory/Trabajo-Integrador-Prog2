@@ -27,7 +27,9 @@ condicion VARCHAR(200),
 tipo_producto VARCHAR(200),
 created_at DATE,
 updated_at DATE,
-comentarios INT
+comentarios INT,
+idUsuario INT UNSIGNED,
+FOREIGN KEY (idUsuario) REFERENCES usuario(id)
 );
 
 CREATE TABLE comentarios(
@@ -51,7 +53,7 @@ idUsuarioSeguido INT UNSIGNED,
 
 INSERT INTO usuario VALUES (DEFAULT, "Micaela", "Chandía", "mc@udesa.edu.ar", "mChandia", "1234567", "2003-04-05", "44847605", "/mica.jpg", "10", "5", "18");
 
-INSERT INTO usuario VALUES (DEFAULT, "Tomás", "Merlo", "tm@udesa.edu.ar", "tMerlo", "987654", "2003-04-05", "44447796", "/tomi.jpg", "15", "6", "20");
+INSERT INTO usuario VALUES (DEFAULT, "Tomás", "Merlo", "tm@udesa.edu.ar", "tMerlo", "$2a$10$kzG5RogonWhfz4MoS6vcZOSdJK5z31nsafulE/ChuCMXS3ESZeyvi", "2003-04-05", "44447796", "/tomi.jpg", "15", "6", "5");
 
 INSERT INTO usuario VALUES (DEFAULT, "Facundo", "Bory", "fb@udesa.edu.ar", "fBory", "567834", "2003-04-05", "44482373", "/facu.jpg", "20", "8", "23");
 
@@ -67,7 +69,8 @@ VALUES (DEFAULT,
 "Televisor",
 "2021-04-05",
 "2022-04-05",
-"4"
+"4",
+"2"
 );
 
 INSERT INTO producto
@@ -80,7 +83,8 @@ VALUES (DEFAULT,
 "Computadora",
 "2021-04-05",
 "2022-04-05",
-"4"
+"4",
+"1"
 );
 
 INSERT INTO producto
@@ -93,7 +97,8 @@ VALUES(DEFAULT,
 "Celular",
 "2021-04-05",
 "2022-04-05",
-"4"
+"4",
+"3"
 );
 
 
@@ -107,7 +112,8 @@ VALUES(DEFAULT,
 "Cafetera",
 "2021-04-05",
 "2022-04-05",
-"4"
+"4",
+"3"
 );
 
 INSERT INTO producto
@@ -120,7 +126,8 @@ VALUES(DEFAULT,
 "Celular",
 "2021-04-05",
 "2022-04-05",
-"4"
+"4",
+"1"
 );
 
 INSERT INTO producto
@@ -133,7 +140,8 @@ VALUES(DEFAULT,
 "Computadora",
 "2021-04-05",
 "2022-04-05",
-"4"
+"4",
+"2"
 );
 
 INSERT INTO producto
@@ -146,7 +154,8 @@ VALUES(DEFAULT,
 "Heladera",
 "2021-04-05",
 "2022-04-05",
-"4"
+"4",
+"1"
 );
 
 INSERT INTO producto
@@ -159,7 +168,8 @@ VALUES(DEFAULT,
 "Tablet",
 "2021-04-05",
 "2022-04-05",
-"4"
+"4",
+"2"
 );
 
 INSERT INTO producto
@@ -172,7 +182,8 @@ VALUES(DEFAULT,
 "Microondas",
 "2021-04-05",
 "2022-04-05",
-"4"
+"4",
+"2"
 );
 
 INSERT INTO producto
@@ -185,7 +196,8 @@ VALUES(DEFAULT,
 "Licuadora",
 "2021-04-05",
 "2022-04-05",
-"4"
+"4",
+"3"
 );
 
 INSERT INTO producto
@@ -198,7 +210,8 @@ VALUES(DEFAULT,
 "Air fryer",
 "2021-09-14",
 "2022-02-25",
-"4"
+"4",
+"3"
 );
 
 INSERT INTO producto
@@ -211,5 +224,25 @@ VALUES(DEFAULT,
 "Auriculares",
 "2021-08-05",
 "2022-09-15",
-"4"
+"4",
+"1"
+);
+
+INSERT INTO producto
+VALUES(DEFAULT,
+"Zapatillas Nike air jordan",
+"https://cdn.acelerala.com/files/uploads/2803/1633022722-15-air-jordan-1-high-og-seafoam-w-2-1000-1200x1200-png.png",
+"Estado: DISPONIBLE EN STOCK 
+Modelo: Jordan 1 Retro High OG Seafoam 
+Color: Verde 
+Condicion: Nuevo 
+Envios: A todo el Perú 
+Producto: 100% Original (Autentificado)",
+"Air Jordan",
+"Nuevas",
+"Zapatillas",
+"2022-06-21",
+"2022-06-21",
+"4",
+"2"
 );

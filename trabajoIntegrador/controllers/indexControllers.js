@@ -17,7 +17,8 @@ const indexController = {
 
 
     db.Producto.findAll({
-      order : [['created_at','DESC']]
+      order : [['created_at','DESC']],
+      include : [{association:"productoComentarios"}]
     })
       .then((result) => {
         return res.render("index", {

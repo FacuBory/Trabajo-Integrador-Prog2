@@ -29,12 +29,12 @@
 					<section class="product-box">
 						<a href="/product/detalle/<%= listaProductos[i].id %> ">
 							<figure class="product-box_image">
-								<img src="<%= listaProductos[i].img %>" alt="cafetera moulinex">
+								<img src="<%= listaProductos[i].img%>" alt="">
 							</figure>
 							<article class="product-box_data">
 								<h2 class="nombrestyle"><%= listaProductos[i].nombre %> </h2>
 								<p class="descripcionstyle"> <%= listaProductos[i].descripción %></p>
-								<p>Comentarios: 12</p>
+								<p>Comentarios: <%= listaProductos[i].productoComentarios.length  %> </p>
 							</article>
 						</a>
 					</section>

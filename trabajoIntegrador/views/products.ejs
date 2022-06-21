@@ -4,47 +4,68 @@
 <%- include('./partials/head') %>
 
 	<body>
-		<% if (locals.user != undefined) { %>
-			<%- include('./partials/header-logueado.ejs')  %> 
+		<% if (locals.user !=undefined) { %>
+		<%- include('./partials/header-logueado.ejs') %>
 		<% }else { %>
-			  <%- include('./partials/header.ejs')  %> 
-		<% } %> 
+		<%- include('./partials/header.ejs') %>
+		<% } %>
 
-		<div class="container products-wrapper">
-			<div class="d-flex align-items-center">
-				<h2 class="products-title">
-					<%= detalleProducto.nombre%>
-				</h2>
-				<p class="product-detail-description">
-					<a href="/product/product-add">Editar</a>
-				</p>
-			</div>
-			<div class="product-detail">
-				<div class="row">
-					<article class="col-12 col-lg-8 product-detail-info">
-						<img src="<%= detalleProducto.img %> " alt="" class="product-detail-img">
-						<p class="product-detail-description">
-							<%= detalleProducto.descripcion %>
-						</p>
+							<div class="container products-wrapper">
+								<div class="d-flex align-items-center">
+									<h2 class="products-title">
+										<%= detalleProducto.nombre%>
+									</h2>
+									<p class="product-detail-description">
+										<a href="/product/product-add">Editar</a>
+									</p>
+								</div>
+								<div class="product-detail">
+									<div class="row">
+										<article class="col-12 col-lg-8 product-detail-info">
+											<img src="<%= detalleProducto.img %> " alt="" class="product-detail-img">
+											<p class="product-detail-description">
+												<%= detalleProducto.descripcion %>
+											</p>
 
-					</article>
-					
-							<section>
+										</article>
+										<% for( let i=0; i < detalleProducto.productoComentarios.length; i++ ) { %>
 
-								<form class="form" action="" method="POST">
-									<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-									<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-								</form>
+											<div class="col-12 col-lg-4">
+												<section class="comments">
+													<article>
+														<img src="<%= detalleProducto.productoComentarios[i].comentarioUsuario.fotoPerfil%>" alt="">
+														<div class="data">
+															<p class="user">
+																<strong>
+																	<a href="/users/profile/<%= detalleProducto.productoComentarios[i].comentarioUsuario.id%>">
+																		<%=detalleProducto.productoComentarios[i].comentarioUsuario.nombre %>
+																	</a>
+																</strong>
+																<%= detalleProducto.productoComentarios[i].texto %>
+															</p>
+														</div>
+													</article>
+												</section>
+											</div>
+											<% } %>
 
-							</section>
+										<section>
+
+											<form class="form" action="" method="POST">
+												<input class="form-input" type="text" value=""
+													placeholder="Agregar comentario">
+												<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+											</form>
+
+										</section>
 
 
-				</div>
+									</div>
 
-			</div>
-		</div>
-		</div>
-		<!-- /product detail -->
+								</div>
+							</div>
+							</div>
+							<!-- /product detail -->
 
 
 

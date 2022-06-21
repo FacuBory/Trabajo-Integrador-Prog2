@@ -1,6 +1,6 @@
 module.exports = function (sequelize, dataTypes){
 
-    let alias = 'Comentario';
+    let alias = 'Comentarios';
 
     let cols = {
         id: {
@@ -24,10 +24,20 @@ module.exports = function (sequelize, dataTypes){
     };
 
     let config = {
-        tableName: 'comentario',
+        tableName: 'comentarios',
         timestamps: false,
-        underscored: true,
+        underscored: false,
     };
     const comentarioTabla = sequelize.define(alias,cols,config);
+    comentarioTabla.associate = function(models){
+        comentarioTabla.belongsTo(models.Producto,{
+            as : "comentarioProducto",
+            foreignKey:"idProductoComentado"
+        }),
+        comentarioTabla.belongsTo(models.Usuario,{
+            as : "comentarioUsuario",
+            foreignKey:"idUsuarioComentador"
+        })
+    }
     return comentarioTabla
 };

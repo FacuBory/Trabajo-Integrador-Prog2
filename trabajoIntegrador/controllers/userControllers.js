@@ -5,11 +5,20 @@ const bcryptjs = require('bcryptjs');
 
 const userController = {
   profile: function (req, res, next) {
+    let id = req.params.id;
 
-    res.render('profile', {
-      usuarioLogueado: db.usuario,
-      listaProducto: db.productos
-    });
+    db.Usuario.findByPk(id, {
+      include: [{
+        association: "usuarioProducto", include:[{ association: "productoComentarios"}]
+      }, {association : "usuarioComentarios"}]
+    })
+      .then((result) => {
+        res.render("profile", {
+          usuarioLogueado: result
+        });
+
+      })
+
   },
 
   userDeslogueado: function (req, res, next) {
@@ -62,7 +71,7 @@ const userController = {
       user.create(usuarioParaGuardar)
         .then((result) => {
           return res.redirect("/users/login")
-        }).catch((error)=>{
+        }).catch((error) => {
           if (error.errors[0].validatorKey == "not_unique") {
             errors.message = "Este mail esta en uso. Intente con otro o recuerde su contraseña"
             res.locals.errors = errors
@@ -111,11 +120,11 @@ const userController = {
 
   editar: function (req, res) {
     res.render('profile-edit', {
-      usuarioLogueado:db.usuario
+      usuarioLogueado: db.usuario
     })
   },
 
-  logout: function(req,res){
+  logout: function (req, res) {
     req.session.destroy();
     res.clearCookie("usuarioId");
     return res.redirect("/")
