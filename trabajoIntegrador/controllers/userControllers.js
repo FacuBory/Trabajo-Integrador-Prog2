@@ -91,8 +91,8 @@ const userController = {
         let claveCorrecta = bcryptjs.compareSync(info.password, result.contrasenia);
         if (claveCorrecta) {
           req.session.user = result.dataValues;
-          if (req.body.botonrecordame != undefined) {
-            res.cookies('usuarioId', req.session.user.id, { maxAge: 1000 * 6 * 5 })
+          if (req.body.botonRecordame != undefined) {
+            res.cookie('usuarioId', req.session.user.id, { maxAge: 1000 * 6 * 5 })
           }
           return res.redirect('/')
         } else {

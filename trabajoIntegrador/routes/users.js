@@ -28,7 +28,7 @@ router.post('/register', upload.single('fotoDePerfil'), userControllers.procesar
 router.get('/login', userControllers.login);
 router.post('/login', userControllers.procesarLogin);
 
-router.post('/', userControllers.logout);
+router.post('/logout', userControllers.logout);
 
 router.get('/edit/profile',userControllers.editar)
 

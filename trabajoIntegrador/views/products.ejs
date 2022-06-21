@@ -4,7 +4,11 @@
 <%- include('./partials/head') %>
 
 	<body>
-
+		<% if (locals.user != undefined) { %>
+			<%- include('./partials/header-logueado.ejs')  %> 
+		<% }else { %>
+			  <%- include('./partials/header.ejs')  %> 
+		<% } %> 
 
 		<div class="container products-wrapper">
 			<div class="d-flex align-items-center">
@@ -20,30 +24,11 @@
 					<article class="col-12 col-lg-8 product-detail-info">
 						<img src="<%= detalleProducto.img %> " alt="" class="product-detail-img">
 						<p class="product-detail-description">
-							<%= detalleProducto.descripción %>
+							<%= detalleProducto.descripcion %>
 						</p>
 
 					</article>
-					<% for( let i=0; i < 6; i++ ) { %>
-
-						<div class="col-12 col-lg-4">
-							<section class="comments">
-								<article>
-									<img src="<%= comentarios[i].imagenDePerfil %> " alt="">
-									<div class="data">
-										<p class="user">
-											<strong>
-												<a href="/users/profile">
-													<%=comentarios[i].nombreDeUsuario %>
-												</a>
-											</strong>
-											<%= comentarios[i].comentario %>
-										</p>
-									</div>
-								</article>
-							</section>
-						</div>
-						<% } %>
+					
 							<section>
 
 								<form class="form" action="" method="POST">

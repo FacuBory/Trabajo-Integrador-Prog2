@@ -11,20 +11,13 @@ let productoControllers = {
     });
   },
 
-  detalleProducto: function (req, res) {
-    let idProducto = req.params.id
-    return res.render('products', {
-      detalleProducto: db.productos[idProducto],
-      comentarios: db.comentarios
-
-    })
-  },
+  
   show: function(req,res){
   let id = req.params.id
   db.Producto.findByPk(id)
   .then((result)=>{
     return res.render("products",{
-      producto : result
+      detalleProducto : result
     });
   })
   },
