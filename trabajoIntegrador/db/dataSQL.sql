@@ -21,7 +21,7 @@ CREATE TABLE  producto(
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 nombre VARCHAR(200),
 img VARCHAR(350),
-descripcion VARCHAR(1000),
+descripcion VARCHAR(2000),
 marca VARCHAR(200),
 condicion VARCHAR(200),
 tipo_producto VARCHAR(200),
