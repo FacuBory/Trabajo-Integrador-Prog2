@@ -1,7 +1,7 @@
 <header class="main-header">
   <% if (locals.user !=undefined) { %>
-    <a href="/users/profile" class="main-header_home-link">
-      <p><%= user.name %></p>
+    <a href="/users/profile" class="">
+      <p><%= user.nombre %></p>
     </a>
     <% }else { %>
     <p>Registrate!</p>
@@ -52,7 +52,7 @@
         </div>
 
         <% if (locals.user !=undefined) { %>
-          <p>Bienvenido, <%= user.name %>
+          <p>Bienvenido, <%= user.nombre %>
           </p>
         <% } %>
 </header>

@@ -33,7 +33,7 @@ const indexController = {
   search: (req, res) => {
     let busqueda = req.query.search;
     db.Producto.findAll({
-      where: {
+      where: [{
         [Op.or]: [
           {
             nombre:
@@ -48,7 +48,7 @@ const indexController = {
             }
           },
         ]
-      }
+      }]
     }
     )
       .then((result) => {

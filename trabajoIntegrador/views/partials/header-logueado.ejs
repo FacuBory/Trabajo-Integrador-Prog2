@@ -1,4 +1,11 @@
 <header class="main-header">
+	<% if (locals.user !=undefined) { %>
+		<a href="/users/profile" class="">
+		  <p><%= user.nombre %></p>
+		</a>
+		<% }else { %>
+		<p>Registrate!</p>
+		  <% } %>
 	<div class="container">
 		<div class="row align-items-center">
 			<div class="col-5 col-md-2">
@@ -45,15 +52,12 @@
 						</button>
 					</form>
 				</li>
-				<!-- Solo deslogueado <li>
-						<a href="register.html">Creá tu cuenta <i class="far fa-address-card"></i>
-						</a>
-					</li>
-					<li>
-						<a href="login.html">Ingresá <i class="fas fa-sign-in-alt"></i></a>
-					</li> -->
 			</ul>
 		</nav>
 	</div>
+	<% if (locals.user !=undefined) { %>
+		<p>Bienvenido, <%= user.nombre %>
+		</p>
+	  <% } %>
 </header>
 <!-- /Header -->
