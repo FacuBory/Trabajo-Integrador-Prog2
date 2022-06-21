@@ -65,18 +65,32 @@
 		</div>
 	</header>
 	<!-- /Header -->
-
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
 				<h2 class="products-title">Resultados de búsqueda</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá van los resultados de búsqueda. <br>
-			Eliminen estás líneas y cosntruyan la página de resultados de búsqueda. <br>
-			////////////////
-			</h2>
+			<% if (listaProductos.length == 0) { %>
+				<h3>No hay resultados para la busqueda</h3>
+			<% }else{ %>
+				<% for( let i = 0; i < listaProductos.length; i++ ) { %>
+					<div class="col-12 col-sm-6 col-lg-3">
+						<section class="product-box">
+							<a href="/product/detalle/<%= i %> ">
+								<figure class="product-box_image">
+									<img src="<%= listaProductos[i].img %>" alt="cafetera moulinex">
+								</figure>
+								<article class="product-box_data">
+									<h2 class="nombrestyle"><%= listaProductos[i].nombre %> </h2>
+									<p class="descripcionstyle"> <%= listaProductos[i].descripción %></p>
+									<p>Comentarios: 12</p>
+								</article>
+							</a>
+						</section>
+					</div>
+				<% } %>
+			<% } %>
 
 
 	<!-- footer -->
