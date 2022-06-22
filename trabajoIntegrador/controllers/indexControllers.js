@@ -19,7 +19,8 @@ const indexController = {
 
     db.Producto.findAll({
       order: [['created_at', 'DESC']],
-      include: [{ association: "productoComentarios" }]
+      include: [{ association: "productoComentarios" },
+      { association: "productoUsuario" }]
     })
       .then((result) => {
         return res.render("index", {
@@ -33,6 +34,8 @@ const indexController = {
   search: (req, res) => {
     let busqueda = req.query.search;
     db.Producto.findAll({
+      include: [{ association: "productoComentarios" },
+      { association: "productoUsuario" }],
       where: [{
         [Op.or]: [
           {

@@ -1,8 +1,10 @@
 
+const { localsName } = require('ejs');
 const db = require('../database/models');
 
 const Producto = require('../database/models/Producto');
 let productoNuevo = db.Producto;
+let comentarioNuevo = db.Comentarios;
 
 let productoControllers = {
   info: function (req, res) {
@@ -20,7 +22,7 @@ let productoControllers = {
         include: [{
           association: "comentarioUsuario"
         }]
-      }]
+      }, { association: "productoUsuario" }]
     })
       .then((result) => {
         return res.render("products", {
@@ -49,8 +51,81 @@ let productoControllers = {
         return res.redirect("/")
       })
 
+  },
+  comment: (req, res) => {
+    let id = req.params.id;
+    let info = req.body
+    if (res.locals.user == undefined) {
+      return res.redirect('/users/login')
+    } else {
+      let commentNuevo = {
+        idUsuarioComentador: res.locals.user.id,
+        idProductoComentado: id,
+        texto: info.inputComment
+      }
+      comentarioNuevo.create(commentNuevo)
+        .then((result) => {
+          return res.redirect('/product/detalle/' + id)
+        })
+    }
+  },
+  edit:(req,res)=>{
+   let id = req.params.id
+   db.Producto.findByPk(id)
+   .then((result)=>{
+    let productoEdit = {
+      id: result.id,
+      nombre: result.nombre,
+      imagen: result.img,
+      descripcion: result.descripcion,
+      marca: result.marca,
+      condicion: result.condicion,
+      tipo_producto: result.tipo_producto,
+      
+    }
+    return res.render("product-edit",{Producto:productoEdit})
+    })
+  },
+  update:(req,res)=>{
+  let info = req.body
+  let id = req.params.id
+  db.Producto.update(
+    {
+      nombre: info.nombre,
+      img: info.imagen,
+      descripcion: info.descripcion,
+      marca: info.marca,
+      condicion: info.condicion,
+      tipo_producto: info.tipo_producto,
+      update_at: new Date()
+    },
+    {
+      where:[
+        {id:id}
+      ]
+    }
+  )
+  .then((result)=>{
+    return res.redirect("/product/detalle/"+ id)
+  })
+
+
+  },
+  delete: (req, res) => {
+    let productoABorrar = req.params.id;
+    comentarioNuevo.destroy({
+      where: [{ idProductoComentado: productoABorrar }]
+    }).then((result) => {
+      productoNuevo.destroy({
+        where: [{ id: productoABorrar }]
+      })
+        .then((result) => {
+          return res.redirect('/')
+        })
+    })
   }
 }
+
 
 
 

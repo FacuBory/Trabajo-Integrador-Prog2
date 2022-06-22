@@ -53,7 +53,7 @@ idUsuarioSeguido INT UNSIGNED,
 
 INSERT INTO usuario VALUES (DEFAULT, "Micaela", "Chandía", "mc@udesa.edu.ar", "mChandia", "1234567", "2003-04-05", "44847605", "/mica.jpg", "10", "5", "18");
 
-INSERT INTO usuario VALUES (DEFAULT, "Tomás", "Merlo", "tm@udesa.edu.ar", "tMerlo", "$2a$10$kzG5RogonWhfz4MoS6vcZOSdJK5z31nsafulE/ChuCMXS3ESZeyvi", "2003-04-05", "44447796", "/tomi.jpg", "15", "6", "5");
+INSERT INTO usuario VALUES (DEFAULT, "Tomás", "Merlo", "tm@udesa.edu.ar", "tMerlo", "$2a$10$kzG5RogonWhfz4MoS6vcZOSdJK5z31nsafulE/ChuCMXS3ESZeyvi", "2003-04-05", "44447796", "https://images.vexels.com/media/users/3/131318/isolated/lists/c969a7b00da3bad9ed9b3dfcf81ec8a6-cabeza-de-dibujos-animados-de-hombre.png", "15", "6", "5");
 
 INSERT INTO usuario VALUES (DEFAULT, "Facundo", "Bory", "fb@udesa.edu.ar", "fBory", "567834", "2003-04-05", "44482373", "/facu.jpg", "20", "8", "23");
 

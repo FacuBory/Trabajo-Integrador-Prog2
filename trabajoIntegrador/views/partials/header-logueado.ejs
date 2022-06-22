@@ -1,7 +1,7 @@
 <header class="main-header">
 	<% if (locals.user !=undefined) { %>
-		<a href="/users/profile" class="">
-		  <p><%= user.nombre %></p>
+		<a href="/users/profile" class="main-header_credit-link">
+		  <p><%= %></p>
 		</a>
 		<% }else { %>
 		<p>Registrate!</p>
@@ -15,7 +15,7 @@
 			</div>
 
 			<div class="col-7 col-md-6">
-				<form action="/index/search-results" method="GET" class="search-form">
+				<form action="/search-results" method="GET" class="search-form">
 					<input type="text" name="search" placeholder="Buscar productos, marcas y más"
 						class="search-form_input">
 					<button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
@@ -26,6 +26,12 @@
 				<a class="main-header_credit-link">
 					<i class="fas fa-hand-holding-usd"></i>
 					Todas las opiniones en un solo lugar.
+				</a>
+				<a class="main-header_credit-link">
+					<% if (locals.user !=undefined) { %>
+						<p>Bienvenido, <%= user.nombre %>
+						</p>
+					  <% } %>
 				</a>
 			</div>
 		</div>
@@ -55,9 +61,6 @@
 			</ul>
 		</nav>
 	</div>
-	<% if (locals.user !=undefined) { %>
-		<p>Bienvenido, <%= user.nombre %>
-		</p>
-	  <% } %>
+	
 </header>
 <!-- /Header -->

@@ -33,8 +33,9 @@
 							</figure>
 							<article class="product-box_data">
 								<h2 class="nombrestyle"><%= listaProductos[i].nombre %> </h2>
-								<p class="descripcionstyle"> <%= listaProductos[i].descripción %></p>
-								<p>Comentarios: <%= listaProductos[i].productoComentarios.length  %> </p>
+								<p class="descripcionstyle"> <%= listaProductos[i].descripcion %></p>
+								<p class="descripcionstyle"> Publicado por: <%= listaProductos[i].productoUsuario.nombre %></p>
+								<p class="descripcionstyle">Comentarios: <%= listaProductos[i].productoComentarios.length  %> </p>
 							</article>
 						</a>
 					</section>
@@ -44,16 +45,16 @@
 	</div>
 	<!-- /Novedades -->
 	<!-- Más comentados -->
-	<div class="container products-wrapper">
+	<!--<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
 				<h2 class="products-title">Más comentados</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
+			
 			<% for( let i = 4; i < 8; i++ ) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
-						<a href="/product/detalle/<%= i %> ">
+						<a href="/product/detalle/<%= listaProductos[i].id %> ">
 							<figure class="product-box_image">
 								<img src="<%=listaProductos[i].img %> " alt="">
 							</figure>
@@ -66,13 +67,10 @@
 					</section>
 				</div>
 			<% } %>
-			
+			*//
 		</div>
 	</div>
-	<!-- /Más comentados -->
-
-
-	<!-- footer -->
+	-->
 	<%- include('./partials/footer') %> 
 </body>	
 </html>

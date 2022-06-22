@@ -3,7 +3,11 @@
 
 <%- include('./partials/head') %> 
 <body>
-	<%- include('./partials/header-deslogueado') %> 
+	<% if (locals.user != undefined) { %>
+		<%- include('./partials/header-logueado.ejs')  %> 
+	<% }else { %>
+		  <%- include('./partials/header.ejs')  %> 
+	<% } %> 
 
 	<!-- Novedades -->
 	<div class="container products-wrapper">

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('./partials/head') %>
+
+	<body>
+		
+		<% if (locals.user != undefined) { %>
+			<%- include('./partials/header-logueado.ejs')  %> 
+		<% }else { %>
+			  <%- include('./partials/header.ejs')  %> 
+		<% } %> 
+			<!-- Novedades -->
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-title">Editar productos</h2>
+					</div>
+					<!-- Show the "ultimos" products -->
+
+					<form method="POST" action="/product/product-edit/<%= Producto.id %> ">
+						<h2 class="col-12">
+
+							<label for="">Foto del Producto</label>
+							<input type="file" name="imagen" value="<%= Producto.imagen %> "> 
+
+						</h2>
+
+						<h2 class="col-12">
+
+							<label for=""> Nombre del Producto</label>
+							<input type="text" name="nombre" value="<%= Producto.nombre %> ">
+
+						</h2>
+
+						<h2 class="col-12">
+
+							<label for=""> Descripcion del Producto </label>
+							<input type="text" name="descripcion" value="<%= Producto.descripcion %> ">
+
+						</h2>
+
+						<h2 class="col-12">
+
+							<label for="">Marca </label>
+							<input type="text" name="marca" value="<%= Producto.marca %> ">
+
+						</h2>
+
+						<h2 class="col-12">
+
+							<label for="">Condicion </label>
+							<input type="text" name="condicion" value="<%= Producto.condicion %> ">
+
+						</h2>
+
+						<h2 class="col-12">
+
+							<label for="">Tipo de Producto </label>
+							<input type="text" name="tipo_producto" value="<%= Producto.tipo_producto %> ">
+
+						</h2>
+
+						<h2 class="col-12">
+
+							<input type="submit" value="CARGAR"></input>
+							
+
+						</h2>
+					</form>
+
+				</div>
+
+			</div>
+			<!-- footer -->
+			<%- include('./partials/footer') %>
+				<!-- /footer -->
+	</body>
+
+</html>
