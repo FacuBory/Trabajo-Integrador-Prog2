@@ -27,9 +27,10 @@
 					<i class="fas fa-hand-holding-usd"></i>
 					Todas las opiniones en un solo lugar.
 				</a>
-				<a class="main-header_credit-link">
+				<a class="main-header_credit-link" href="/users/profile/<%= user.id %>">
 					<% if (locals.user !=undefined) { %>
 						<p>Bienvenido, <%= user.nombre %>
+							<img class="fotoPerfil" src="../../images/users/<%= user.fotoPerfil %>" width="20px" height="20px"/>
 						</p>
 					  <% } %>
 				</a>
@@ -47,10 +48,7 @@
 			</ul>
 
 			<ul class="right-navbar">
-				<li><a href="/users/profile/<%= user.id %>">
-						<%= user.nombre %> <i class="fas fa-user"></i>
-					</a>
-				</li>
+				
 				<li>
 					<form action="/users/logout" method="POST">
 						<button class="logout" type="submit">
