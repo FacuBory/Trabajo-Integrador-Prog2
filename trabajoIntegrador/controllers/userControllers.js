@@ -124,6 +124,26 @@ const userController = {
     })
   },
 
+  update: function (req, res) {
+    user.update(
+        {
+        username: req.body.username,
+        contrasenia: hashedPassword,
+        email: req.body.email,
+        fechaNacimiento: req.body.fechaNacimiento,
+        dni: req.body.dni,
+        },{
+            where: [{id:req.session.user.id }]
+        }
+    )
+        .then(function (data) {
+            res.redirect('/')
+        })
+        .catch(function (error) {
+            res.send(error);
+        })
+},
+
   logout: function (req, res) {
     req.session.destroy();
     res.clearCookie("usuarioId");

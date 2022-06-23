@@ -31,5 +31,6 @@ router.post('/login', userControllers.procesarLogin);
 router.post('/logout', userControllers.logout);
 
 router.get('/edit/profile',userControllers.editar)
+router.post('/edit/profile',userControllers.update)
 
 module.exports = router;

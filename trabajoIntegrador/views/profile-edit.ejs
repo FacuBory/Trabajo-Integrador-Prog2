@@ -18,45 +18,32 @@
 			<h2 class="col-12">
 				<form action="GET" action="/users/register">
 					<label for=""> Email </label>
-					<input type="email" email="email" placeholder="...@gmail.com">
-				</form>
+					<input type="email" email="email" placeholder="...@gmail.com" value="<%= user.email%>">
 			</h2>
 			<h2 class="col-12">
-				<form action="GET" action="/users/register">
 					<label for=""> Usuario </label>
-					<input type="text" name="usuario">
-				</form>
+					<input type="text" name="usuario" value="<%= user.usuario%>">
 			</h2>
 			<h2 class="col-12">
-				<form action="GET" action="/users/register">
 					<label for="">Contraseña </label>
-					<input type="password" name="contraseña">
-				</form>
+					<input type="password" name="contraseña" value="<%= user.contrasenia%>">
 			</h2>
 			<h2 class="col-12">
-				<form action="GET" action="/users/register">
 					<label for="">Fecha de nacimiento </label>
-					<input type="date" name="nacimiento">
-				</form>
+					<input type="date" name="nacimiento" value="<%= user.fechaNacimiento%>">
 			</h2>
 			<h2 class="col-12">
-				<form action="GET" action="/users/register">
 					<label for="">Número de documento </label>
-					<input type="number" name="numero de documento" maxlength=8 >
-				</form>
+					<input type="number" name="numero de documento" maxlength=8 value="<%= user.dni%>">
 			</h2>
 			<h2 class="col-12">
-				<form action="GET" action="/users/register">
 					<label for="">Foto de perfil </label>
-					<input type="file" name="foto de perfil">
-				</form>
+					<input type="file" name="foto de perfil" value="<%= user.fotoPerfil%>">
 			</h2>
 			<h2 class="col-12">
-				<form action="/users/profile" action="/users/profile">
-					<input type="reset" value="Borrar"></input>
 					<input type="submit" value="Enviar"></input>
-				</form>
 			</h2> 
+		</form>
 		</div>
 	</div>
 

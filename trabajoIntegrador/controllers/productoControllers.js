@@ -126,7 +126,4 @@ let productoControllers = {
   }
 }
 
-
-
-
 module.exports = productoControllers
