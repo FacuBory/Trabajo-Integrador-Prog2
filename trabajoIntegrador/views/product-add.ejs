@@ -18,11 +18,11 @@
 					</div>
 					<!-- Show the "ultimos" products -->
 
-					<form method="POST" action="/product/product-add">
+					<form method="POST" action="/product/product-add" enctype="multipart/form-data" >
 						<h2 class="col-12">
 
 							<label for="">Foto del Producto</label>
-							<input type="file" name="fotoDeProducto">
+							<input type="file" name="fotoProducto">
 
 						</h2>
 
@@ -58,13 +58,6 @@
 
 							<label for="">Tipo de Producto </label>
 							<input type="text" name="tipoDeProducto">
-
-						</h2>
-
-						<h2 class="col-12">
-
-							<label for="">Fecha de Carga </label>
-							<input type="date" name="fechaCarga">
 
 						</h2>
 

@@ -169,7 +169,8 @@ const userController = {
       }
       )
         .then(function (data) {
-          res.redirect('/users/profile/' + id)
+          res.locals.user.fotoPerfil = fotoDePerfil
+          res.redirect('/')
         })
         .catch(function (error) {
           res.send(error);

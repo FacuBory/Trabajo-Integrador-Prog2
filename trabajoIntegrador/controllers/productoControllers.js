@@ -39,14 +39,16 @@ let productoControllers = {
 
   store: (req, res) => {
     let info = req.body
+    let fotoDeProducto = req.file.filename;
     let productoGuardado = {
       nombre: info.nombreProducto,
-      imagen: info.fotoDeProducto,
+      img: fotoDeProducto,
       descripcion: info.descripcionProducto,
       marca: info.marcaProducto,
       condicion: info.condicionProducto,
       tipo_producto: info.tipoDeProducto,
-      created_at: info.fechaCarga,
+      created_at: new Date(),
+      idUsuario : res.locals.user.id 
     }
     productoNuevo.create(productoGuardado)
       .then((result) => {
@@ -78,7 +80,7 @@ let productoControllers = {
     let productoEdit = {
       id: result.id,
       nombre: result.nombre,
-      imagen: result.img,
+      img: result.img,
       descripcion: result.descripcion,
       marca: result.marca,
       condicion: result.condicion,
@@ -91,10 +93,11 @@ let productoControllers = {
   update:(req,res)=>{
   let info = req.body
   let id = req.params.id
+  let fotoDeProducto = req.file.filename;
   db.Producto.update(
     {
       nombre: info.nombre,
-      img: info.imagen,
+      img: fotoDeProducto,
       descripcion: info.descripcion,
       marca: info.marca,
       condicion: info.condicion,
