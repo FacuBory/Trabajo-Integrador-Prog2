@@ -2,54 +2,71 @@
 <html lang="es">
 <!-- Include Head -->
 
-<%- include('./partials/head') %> 
-<body>
-	<% if (locals.user != undefined) { %>
-		<%- include('./partials/header-logueado.ejs')  %> 
-	<% }else { %>
-		  <%- include('./partials/header.ejs')  %> 
-	<% } %> 
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Editar mi perfil</h2>
-			</div>
-			<!-- Show the "ultimos" products -->
-			<h2 class="col-12">
-				<form action="GET" action="/users/register">
-					<label for=""> Email </label>
-					<input type="email" email="email" placeholder="...@gmail.com" value="<%= user.email%>">
-			</h2>
-			<h2 class="col-12">
-					<label for=""> Usuario </label>
-					<input type="text" name="usuario" value="<%= user.usuario%>">
-			</h2>
-			<h2 class="col-12">
-					<label for="">Contraseña </label>
-					<input type="password" name="contraseña" value="<%= user.contrasenia%>">
-			</h2>
-			<h2 class="col-12">
-					<label for="">Fecha de nacimiento </label>
-					<input type="date" name="nacimiento" value="<%= user.fechaNacimiento%>">
-			</h2>
-			<h2 class="col-12">
-					<label for="">Número de documento </label>
-					<input type="number" name="numero de documento" maxlength=8 value="<%= user.dni%>">
-			</h2>
-			<h2 class="col-12">
-					<label for="">Foto de perfil </label>
-					<input type="file" name="foto de perfil" value="<%= user.fotoPerfil%>">
-			</h2>
-			<h2 class="col-12">
-					<input type="submit" value="Enviar"></input>
-			</h2> 
-		</form>
-		</div>
-	</div>
+<%- include('./partials/head') %>
+
+	<body>
+		<% if (locals.user !=undefined) { %>
+			<%- include('./partials/header-logueado.ejs') %>
+				<% }else { %>
+					<%- include('./partials/header.ejs') %>
+						<% } %>
+							<div class="container products-wrapper">
+								<div class="row">
+									<div class="col-12">
+										<h2 class="products-title">Editar mi perfil</h2>
+									</div>
+
+									<% if (locals.errors) { %>
+										<p style="color: red;">
+											<%= locals.errors.message %>
+										</p>
+										<% } %>
+											<form method="POST" action="/users/profile-edit/<%= user.id %> " enctype="multipart/form-data">
+												<h2 class="col-12">
+													<label for=""> Email </label>
+													<input type="email" email="email" placeholder="...@gmail.com"
+														value="<%= user.email%>" disabled="true">
+												</h2>
+												<h2 class="col-12">
+													<label for=""> Nombre </label>
+													<input type="text" name="nombre" value="<%= user.nombre%>">
+												</h2>
+												<h2 class="col-12">
+													<label for=""> Apellido </label>
+													<input type="text" name="apellido" value="<%= user.apellido%>">
+												</h2>
+												<h2 class="col-12">
+													<label for=""> Usuario </label>
+													<input type="text" name="usuario" value="<%= user.usuario%>">
+												</h2>
+												<h2 class="col-12">
+													<label for="">Contraseña </label>
+													<input type="password" name="contrasenia"
+														value="<%= user.contrasenia%>">
+												</h2>
+												<h2 class="col-12">
+													<label for="">Fecha de nacimiento </label>
+													<input type="date" name="nacimiento"
+														value="<%= user.fechaNacimiento%>">
+												</h2>
+												<h2 class="col-12">
+													<label for="">Número de documento </label>
+													<input type="number" name="dni" maxlength=8 value="<%= user.dni%>">
+												</h2>
+												<h2 class="col-12">
+													<label for="">Foto de perfil </label>
+													<input type="file" name="fotoPerfil" value="<%= user.fotoPerfil%>">
+												</h2>
+												<h2 class="col-12">
+													<input type="submit" value="Enviar"></input>
+												</h2>
+											</form>
+								</div>
+							</div>
 
 
-	<!-- footer -->
-	<%- include('./partials/footer') %> 
-</body>
+
+							<%- include('./partials/footer') %>
+	</body>
 
 </html>

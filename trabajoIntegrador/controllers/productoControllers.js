@@ -17,12 +17,14 @@ let productoControllers = {
   show: function (req, res) {
     let id = req.params.id;
     db.Producto.findByPk(id, {
+      
       include: [{
         association: "productoComentarios",
         include: [{
           association: "comentarioUsuario"
         }]
-      }, { association: "productoUsuario" }]
+      }, { association: "productoUsuario" }],
+      order: [['productoComentarios','id', 'DESC']]
     })
       .then((result) => {
         return res.render("products", {

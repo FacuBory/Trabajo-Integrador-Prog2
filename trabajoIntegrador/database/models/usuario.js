@@ -62,6 +62,10 @@ module.exports = function (sequelize, dataTypes){
         usuarioTabla.hasMany(models.Comentarios,{
             as : "usuarioComentarios",
             foreignKey:"idUsuarioComentador"
+        }),
+        usuarioTabla.hasMany(models.Seguidor,{
+            as: "usuarioSeguidor",
+            foreignKey:"idUsuarioSeguido"
         })
     }
     return usuarioTabla

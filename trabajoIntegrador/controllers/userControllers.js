@@ -2,6 +2,7 @@ var express = require('express')
 let db = require('../database/models');
 let user = db.Usuario;
 const bcryptjs = require('bcryptjs');
+let seguidorNuevo = db.Seguidor;
 
 const userController = {
   profile: function (req, res, next) {
@@ -9,8 +10,8 @@ const userController = {
 
     db.Usuario.findByPk(id, {
       include: [{
-        association: "usuarioProducto", include:[{ association: "productoComentarios"}]
-      }, {association : "usuarioComentarios"}]
+        association: "usuarioProducto", include: [{ association: "productoComentarios" }]
+      }, { association: "usuarioComentarios" }, {association:"usuarioSeguidor"}]
     })
       .then((result) => {
         res.render("profile", {
@@ -118,37 +119,109 @@ const userController = {
     });
   },
 
-  editar: function (req, res) {
-    res.render('profile-edit', {
-      usuarioLogueado: db.usuario
-    })
-  },
+  editar: (req, res) => {
+    let id = req.params.id
 
-  update: function (req, res) {
-    user.update(
-        {
-        username: req.body.username,
-        contrasenia: hashedPassword,
-        email: req.body.email,
-        fechaNacimiento: req.body.fechaNacimiento,
-        dni: req.body.dni,
-        },{
-            where: [{id:req.session.user.id }]
+    db.Usuario.findByPk(id)
+      .then((result) => {
+        let perfilEdit = {
+          id: id,
+          email: result.email,
+          nombre: result.nombre,
+          apellido: result.apellido,
+          usuario: result.usuario,
+          contrasenia: "",
+          fechaNacimiento: result.fechaNacimiento,
+          dni: result.dni,
+          fotoPerfil: result.fotoPerfil
+
         }
-    )
+        return res.render("profile-edit", { user: perfilEdit })
+      })
+  },
+  update: function (req, res) {
+    let info = req.body;
+    let id = req.params.id;
+    let errors = {};
+    let fotoDePerfil = req.file.filename;
+    if (info.nombre == "") {
+      errors.message = "Ingrese nombre";
+      res.locals.errors = errors;
+      return res.render('profile-edit')
+    }
+    else if (info.contrasenia == "") {
+      errors.message = "Ingrese contraseña";
+      res.locals.errors = errors;
+      return res.render('profile-edit')
+    }
+    else {
+      let hashedPassword = bcryptjs.hashSync(info.contrasenia, 10);
+      user.update({
+        nombre: info.nombre,
+        apellido: info.apellido,
+        usuario: info.usuario,
+        contrasenia: hashedPassword,
+        fechaNacimiento: info.nacimiento,
+        fotoPerfil: fotoDePerfil,
+        dni: info.dni,
+      }, {
+        where: [{ id: id }]
+      }
+      )
         .then(function (data) {
-            res.redirect('/')
+          res.redirect('/users/profile/' + id)
         })
         .catch(function (error) {
-            res.send(error);
+          res.send(error);
         })
-},
+    }
+  },
 
   logout: function (req, res) {
     req.session.destroy();
     res.clearCookie("usuarioId");
     return res.redirect("/")
-  }
+  },
+  follow: (req, res) => {
+    let id = req.params.id;
+    let errors = {};
+    const { Op } = require("sequelize")
+    let followNuevo = {
+      idUsuarioSeguidor: res.locals.user.id,
+      idUsuarioSeguido: id,
+    }
+    seguidorNuevo.findOne({
+      where: {
+        [Op.and]: [
+          { idUsuarioSeguidor: res.locals.user.id },
+          { idusuarioSeguido: id } 
+        ]
+      }
+      
+    }).then((result) => {
+      if (result == null) {
+        seguidorNuevo.create(followNuevo)
+          .then((result) => {
+            return res.redirect('/users/profile/' + id)
+          })
+      } else {
+        errors.message = "Ya sigues a este usuario";
+        res.locals.errors = errors;
+        db.Usuario.findByPk(id, {
+          include: [{
+            association: "usuarioProducto", include: [{ association: "productoComentarios" }]
+          }, { association: "usuarioComentarios" }, {association:"usuarioSeguidor"}]
+        })
+          .then((result) => {
+            return res.render("profile", {
+              usuarioLogueado: result
+            });
+          })
+      }
+    })
+
+
+  },
 
 
 }

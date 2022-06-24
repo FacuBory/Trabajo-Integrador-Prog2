@@ -30,7 +30,9 @@ router.post('/login', userControllers.procesarLogin);
 
 router.post('/logout', userControllers.logout);
 
-router.get('/edit/profile',userControllers.editar)
-router.post('/edit/profile',userControllers.update)
+router.get('/profile-edit/:id',userControllers.editar)
+router.post('/profile-edit/:id',upload.single('fotoDePerfil'),userControllers.update)
+
+router.get('/profile-follow/:id',userControllers.follow)
 
 module.exports = router;

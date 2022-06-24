@@ -17,10 +17,17 @@ module.exports = function (sequelize, dataTypes){
     };
 
     let config = {
-        tableName: 'seguidor',
+        tableName: 'seguidores',
         timestamps: false,
-        underscored: true,
+        underscored: false,
     };
     const seguidorTabla = sequelize.define(alias,cols,config);
+    
+    seguidorTabla.associate = function(models){
+        seguidorTabla.belongsTo(models.Usuario,{
+            as : "seguidorUsuario",
+            foreignKey:"idUsuarioSeguidor"
+        })
+    }
     return seguidorTabla
 };
