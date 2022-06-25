@@ -10,13 +10,13 @@
 		<% }else { %>
 			  <%- include('./partials/header.ejs')  %> 
 		<% } %> 
-			<!-- Novedades -->
+			
 			<div class="container products-wrapper">
 				<div class="row">
 					<div class="col-12">
 						<h2 class="products-title">Editar productos</h2>
 					</div>
-					<!-- Show the "ultimos" products -->
+					
 
 					<form method="POST" action="/product/product-edit/<%= Producto.id %> " enctype="multipart/form-data">
 						<h2 class="col-12">

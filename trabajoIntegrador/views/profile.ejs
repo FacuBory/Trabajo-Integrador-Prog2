@@ -60,21 +60,19 @@
 
 
 							</section>
-							<!-- /Datos del usuario -->
-
-							<!-- Mis productos -->
+							
 							<div class="container products-wrapper">
 								<div class="row">
 									<div class="col-12">
 										<h2 class="products-title">Mis productos</h2>
 									</div>
-									<!-- Show mis productos -->
+									
 									<% for( let i=0; i < usuarioLogueado.usuarioProducto.length ; i++ ) { %>
 										<div class="col-12 col-sm-6 col-lg-3">
 											<section class="product-box">
 												<a href="/product/detalle/<%= usuarioLogueado.usuarioProducto[i].id %>">
 													<figure class="product-box_image">
-														<img src="<%= usuarioLogueado.usuarioProducto[i].img %>"
+														<img src="../../images/products/<%=usuarioLogueado.usuarioProducto[i].img %>"
 															alt="cafetera moulinex">
 													</figure>
 													<article class="product-box_data">

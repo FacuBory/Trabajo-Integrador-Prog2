@@ -29,11 +29,11 @@
 								<div class="product-detail">
 									<div class="row">
 										<article class="col-12 col-lg-8 product-detail-info">
-											<a href="/users/profile/<%= detalleProducto.idUsuario%>" class="products-title">Creado por: <%=
-													detalleProducto.productoUsuario.nombre%>
+											<a href="/users/profile/<%= detalleProducto.idUsuario%>" class="products-title">
+											Creado por: <%= detalleProducto.productoUsuario.nombre%>
 													<%= detalleProducto.productoUsuario.apellido%>
 											</a>
-											<img src="<%= detalleProducto.img %> " alt="" class="product-detail-img">
+											<img src="../../images/products/<%= detalleProducto.img%>" alt="" class="product-detail-img">
 											<p class="product-detail-description">
 												<%= detalleProducto.descripcion %>
 											</p>
